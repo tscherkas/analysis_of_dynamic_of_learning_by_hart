@@ -28,7 +28,7 @@
                 <TextBox Grid.Row="1" Width="200"></TextBox>
             </Grid>
         </Expander>
-        <Button Grid.Row="4" Margin="100,0,100,0" Width="200">Вход</Button>
+        <Button Grid.Row="4" Margin="100,0,100,0" Width="200" Click="Button_Click_1">Вход</Button>
         <Label Grid.Row="5" HorizontalAlignment="Center">
             <TextBlock TextDecorations="Underline" Foreground="Blue">
                 Теоретические сведения
