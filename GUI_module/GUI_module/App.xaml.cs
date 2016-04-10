@@ -13,5 +13,6 @@ namespace GUI_module
     /// </summary>
     public partial class App : Application
     {
+       
     }
 }
