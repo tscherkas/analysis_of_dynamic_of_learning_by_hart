@@ -99,6 +99,9 @@
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestStub.cs" />
+    <Compile Include="StimulEdit.xaml.cs">
+      <DependentUpon>StimulEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Theory.xaml.cs">
       <DependentUpon>Theory.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
     <Page Include="Tests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StimulEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Theory.xaml">
       <SubType>Designer</SubType>

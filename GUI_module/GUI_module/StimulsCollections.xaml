@@ -16,7 +16,7 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" RowDetailsTemplate="{DynamicResource DataTemplate1}">
+        <DataGrid x:Name="dataGrid" RowDetailsTemplate="{DynamicResource DataTemplate1}" Margin="5,10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Имя" Width="2*" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Описание" Width="5*" Binding="{Binding Path=Description}"/>
@@ -25,9 +25,9 @@
             <local:StimulsCollectionStub Name="Ряд №2" Description="Предложение"/>
         </DataGrid>
         <StackPanel Grid.Column="1" Margin="5,25,5,0">
-            <Button x:Name="button" Content="Создать" RenderTransformOrigin="0.521,2.398" Margin="0,10"/>
-            <Button x:Name="button_Copy" Content="Изменить" RenderTransformOrigin="0.521,2.398" Margin="0,10"/>
-            <Button x:Name="button_Copy1" Content="Удалить" RenderTransformOrigin="0.521,2.398" Margin="0,10"/>
+            <Button x:Name="button" Content="Создать" RenderTransformOrigin="0.521,2.398" Margin="5,10"/>
+            <Button x:Name="button_Copy" Content="Изменить" RenderTransformOrigin="0.521,2.398" Margin="5,10"/>
+            <Button x:Name="button_Copy1" Content="Удалить" RenderTransformOrigin="0.521,2.398" Margin="5,10"/>
         </StackPanel>
 
 

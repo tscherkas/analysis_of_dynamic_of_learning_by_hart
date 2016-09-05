@@ -22,6 +22,18 @@ namespace GUI_module
         public Theory()
         {
             InitializeComponent();
+            (this.FindName("PreviewButton") as Button).Click += RTF_EditorToReadModeSwitch;
+            (this.FindName("SaveButton") as Button).Click += RTF_EditorToReadWriteModeSwitch;
+        }
+
+        private void RTF_EditorToReadWriteModeSwitch(object sender, RoutedEventArgs e)
+        {
+            RTF_Editor.IsReadOnly = false;
+        }
+
+        private void RTF_EditorToReadModeSwitch(object sender, RoutedEventArgs e)
+        {
+            RTF_Editor.IsReadOnly = true;
         }
     }
 }

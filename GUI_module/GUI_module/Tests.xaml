@@ -8,7 +8,7 @@
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" >
+        <DataGrid HorizontalAlignment="Left" Margin="10,10,3,3" VerticalAlignment="Top" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Опыт" Width="2*" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Тип" Width="1*" Binding="{Binding Path=Type}"/>
@@ -19,10 +19,10 @@
 
         </DataGrid>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="422" Margin="5,38,0,0" VerticalAlignment="Top" Width="100">
-            <Button x:Name="button" Content="Создать" Margin="0,10,0,10"/>
-            <Button x:Name="button_Copy" Content="Изменить" Margin="0,10,0,10"/>
-            <Button x:Name="button_Copy1" Content="Ряд..." Margin="0,10,0,10"/>
-            <Button x:Name="button_Copy2" Content="Удалить" Margin="0,10,0,10"/>
+            <Button x:Name="button" Content="Создать" Margin="5,10"/>
+            <Button x:Name="button_Copy" Content="Изменить" Margin="5,10"/>
+            <Button x:Name="button_Copy1" Content="Ряд..." Margin="5,10"/>
+            <Button x:Name="button_Copy2" Content="Удалить" Margin="5,10"/>
         </StackPanel>
 
     </Grid>

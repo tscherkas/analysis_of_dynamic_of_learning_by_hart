@@ -23,11 +23,21 @@ namespace GUI_module
         public MainWindow()
         {
             InitializeComponent();
+            EnterButton.Click += EnterApp;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void EnterApp(object sender, RoutedEventArgs e)
         {
-
+            Window w;
+            if(expander.IsExpanded)
+            {
+                (new Theory()).Show();
+                (new Results()).Show();
+                (new StimulsCollections()).Show();
+                (new Tests()).Show();
+                (new AdminStartWindow()).Show();
+            }
+           
         }
     }
 }
