@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,16 +25,31 @@ namespace GUI_module
             InitializeComponent();
             (this.FindName("PreviewButton") as Button).Click += RTF_EditorToReadModeSwitch;
             (this.FindName("SaveButton") as Button).Click += RTF_EditorToReadWriteModeSwitch;
+            ImageInsertButton.Click += ImageInsert;
+        }
+
+        private void ImageInsert(object sender, RoutedEventArgs e)
+        {
+            BitmapImage bi = new BitmapImage(new Uri(getImageFile().FullName,UriKind.Absolute));
+            Image image = new Image();
+            image.Source = bi;
+            InlineUIContainer container = new InlineUIContainer(image);
+            Paragraph paragraph = new Paragraph(container);
+            fld.Blocks.Add(paragraph);
+        }
+
+        private FileInfo getImageFile()
+        {
+            return new FileInfo("example.bmp");
         }
 
         private void RTF_EditorToReadWriteModeSwitch(object sender, RoutedEventArgs e)
         {
-            RTF_Editor.IsReadOnly = false;
+
         }
 
         private void RTF_EditorToReadModeSwitch(object sender, RoutedEventArgs e)
         {
-            RTF_Editor.IsReadOnly = true;
         }
     }
 }

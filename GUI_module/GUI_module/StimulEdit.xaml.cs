@@ -19,9 +19,16 @@ namespace GUI_module
     /// </summary>
     public partial class StimulEdit : Window
     {
+        private bool previewMode = false;
         public StimulEdit()
         {
             InitializeComponent();
+            PreviewButton.Click += PreviewButton_Click;
+        }
+
+        private void PreviewButton_Click(object sender, RoutedEventArgs e)
+        {
+            previewMode = !previewMode;
         }
     }
 }
