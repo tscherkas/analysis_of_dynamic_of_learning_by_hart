@@ -87,10 +87,19 @@
       <DependentUpon>Results.xaml</DependentUpon>
     </Compile>
     <Compile Include="ResultsStub.cs" />
+    <Compile Include="TestAnswers.xaml.cs">
+      <DependentUpon>TestAnswers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestEdit.xaml.cs">
+      <DependentUpon>TestEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StimulsCollections.xaml.cs">
       <DependentUpon>StimulsCollections.xaml</DependentUpon>
     </Compile>
     <Compile Include="StimulsCollectionStub.cs" />
+    <Compile Include="TestExecution.xaml.cs">
+      <DependentUpon>TestExecution.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tests.xaml.cs">
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
@@ -121,7 +130,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TestAnswers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StimulsCollections.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestExecution.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

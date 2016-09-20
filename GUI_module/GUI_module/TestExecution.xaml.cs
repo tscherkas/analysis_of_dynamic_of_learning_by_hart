@@ -10,30 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GUI_module
 {
     /// <summary>
-    /// Interaction logic for Theory.xaml
+    /// Interaction logic for TestExecution.xaml
     /// </summary>
-    public partial class StimulEdit : Window
+    public partial class TestExecution : Page
     {
-        private bool previewMode = false;
-        public StimulEdit()
+        public TestExecution()
         {
             InitializeComponent();
-            PreviewButton.Click += PreviewButton_Click;
-        }
-
-        private void PreviewButton_Click(object sender, RoutedEventArgs e)
-        {
-            previewMode = !previewMode;
-        }
-
-        private void keywordsBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

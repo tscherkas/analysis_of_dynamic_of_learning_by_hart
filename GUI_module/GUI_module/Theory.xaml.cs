@@ -23,8 +23,6 @@ namespace GUI_module
         public Theory()
         {
             InitializeComponent();
-            (this.FindName("PreviewButton") as Button).Click += RTF_EditorToReadModeSwitch;
-            (this.FindName("SaveButton") as Button).Click += RTF_EditorToReadWriteModeSwitch;
             ImageInsertButton.Click += ImageInsert;
         }
 
@@ -41,15 +39,6 @@ namespace GUI_module
         private FileInfo getImageFile()
         {
             return new FileInfo("example.bmp");
-        }
-
-        private void RTF_EditorToReadWriteModeSwitch(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void RTF_EditorToReadModeSwitch(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

@@ -10,30 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GUI_module
 {
     /// <summary>
-    /// Interaction logic for Theory.xaml
+    /// Interaction logic for StimulCollectionEdit.xaml
     /// </summary>
-    public partial class StimulEdit : Window
+    public partial class TestEdit : Page
     {
-        private bool previewMode = false;
-        public StimulEdit()
+        public TestEdit()
         {
             InitializeComponent();
-            PreviewButton.Click += PreviewButton_Click;
-        }
-
-        private void PreviewButton_Click(object sender, RoutedEventArgs e)
-        {
-            previewMode = !previewMode;
-        }
-
-        private void keywordsBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            comboBox.Items.Add("Слова 1");
+            comboBox.Items.Add("Цифры 2");
+            comboBox.Items.Add("Картинки 3");
         }
     }
 }
