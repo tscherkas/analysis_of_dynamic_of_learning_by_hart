@@ -17,8 +17,9 @@
 
         <WpfRichText:RichTextEditor x:Name="RTF_Editor" Margin="10,10,10,10" />
         <StackPanel Grid.Column="1"   Margin="10,10,10,10" >
-            <Button x:Name="PreviewButton" Content="Просмотреть" Margin="5,10"/>
-            <Button x:Name="SaveButton" Content="Сохранить" Margin="5,10"/>
+            <Button x:Name="PreviewButton" Content="Просмотреть" Margin="5,10" Padding="5,10"/>
+            <Button x:Name="SaveButton" Content="Сохранить" Margin="5,10" Padding="5,10"/>
+            <Button x:Name="ImageInsertButton" Content="Image..." Margin="5,10" Padding="5,10"/>
         </StackPanel>
 
 

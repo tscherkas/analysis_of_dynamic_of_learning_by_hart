@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,21 @@ namespace GUI_module
             InitializeComponent();
             (this.FindName("PreviewButton") as Button).Click += RTF_EditorToReadModeSwitch;
             (this.FindName("SaveButton") as Button).Click += RTF_EditorToReadWriteModeSwitch;
+            ImageInsertButton.Click += ImageInsert;
+        }
+
+        private void ImageInsert(object sender, RoutedEventArgs e)
+        {
+            Image i = new Image();
+            Image.FromFile()
+            if () {
+
+            }
+        }
+
+        private File getImageFile()
+        {
+            throw new NotImplementedException();
         }
 
         private void RTF_EditorToReadWriteModeSwitch(object sender, RoutedEventArgs e)
