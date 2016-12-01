@@ -23,33 +23,22 @@ namespace GUI_module
         public Theory()
         {
             InitializeComponent();
-            (this.FindName("PreviewButton") as Button).Click += RTF_EditorToReadModeSwitch;
-            (this.FindName("SaveButton") as Button).Click += RTF_EditorToReadWriteModeSwitch;
             ImageInsertButton.Click += ImageInsert;
         }
 
         private void ImageInsert(object sender, RoutedEventArgs e)
         {
-            Image i = new Image();
-            Image.FromFile()
-            if () {
-
-            }
+            BitmapImage bi = new BitmapImage(new Uri(getImageFile().FullName,UriKind.Absolute));
+            Image image = new Image();
+            image.Source = bi;
+            InlineUIContainer container = new InlineUIContainer(image);
+            Paragraph paragraph = new Paragraph(container);
+            fld.Blocks.Add(paragraph);
         }
 
-        private File getImageFile()
+        private FileInfo getImageFile()
         {
-            throw new NotImplementedException();
-        }
-
-        private void RTF_EditorToReadWriteModeSwitch(object sender, RoutedEventArgs e)
-        {
-            RTF_Editor.IsReadOnly = false;
-        }
-
-        private void RTF_EditorToReadModeSwitch(object sender, RoutedEventArgs e)
-        {
-            RTF_Editor.IsReadOnly = true;
+            return new FileInfo("example.bmp");
         }
     }
 }

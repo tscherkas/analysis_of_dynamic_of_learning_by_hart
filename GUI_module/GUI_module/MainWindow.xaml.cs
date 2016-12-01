@@ -28,13 +28,17 @@ namespace GUI_module
 
         private void EnterApp(object sender, RoutedEventArgs e)
         {
-            Window w;
+            Window w = new Window();
+            w.Title = "Тест";
             if(expander.IsExpanded)
             {
-                (new Theory()).Show();
                 (new Results()).Show();
-                (new StimulsCollections()).Show();
+                (new Theory()).Show();
                 (new Tests()).Show();
+                w.Content = new TestEdit();
+                w.Show();
+                (new StimulEdit()).Show();
+                (new StimulsCollections()).Show();
                 (new AdminStartWindow()).Show();
             }
            

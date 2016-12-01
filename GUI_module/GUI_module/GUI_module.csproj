@@ -50,10 +50,6 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WpfRichText, Version=1.0.16.0, Culture=neutral, PublicKeyToken=75ccead1e6af2af3, processorArchitecture=MSIL">
-      <HintPath>..\packages\WpfRichText.1.0.16.2\lib\net45\WpfRichText.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.0.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
       <Private>True</Private>
@@ -91,10 +87,19 @@
       <DependentUpon>Results.xaml</DependentUpon>
     </Compile>
     <Compile Include="ResultsStub.cs" />
+    <Compile Include="TestAnswers.xaml.cs">
+      <DependentUpon>TestAnswers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestEdit.xaml.cs">
+      <DependentUpon>TestEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StimulsCollections.xaml.cs">
       <DependentUpon>StimulsCollections.xaml</DependentUpon>
     </Compile>
     <Compile Include="StimulsCollectionStub.cs" />
+    <Compile Include="TestExecution.xaml.cs">
+      <DependentUpon>TestExecution.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tests.xaml.cs">
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
@@ -125,7 +130,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TestAnswers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StimulsCollections.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestExecution.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
