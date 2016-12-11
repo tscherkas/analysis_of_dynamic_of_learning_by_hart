@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_module"
         mc:Ignorable="d"
-        Title="Результаты" Height="500" Width="800">
+        Title="Результаты" Width="800">
     <Window.Resources>
         <DataTemplate x:Key="DataTemplate1">
             <Grid d:DesignWidth="603.5" d:DesignHeight="44"/>
@@ -16,21 +16,22 @@
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" RowDetailsTemplate="{DynamicResource DataTemplate1}">
+        <DataGrid x:Name="dataGrid" RowDetailsTemplate="{DynamicResource DataTemplate1}" Margin="0,0,0,397">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Дата" Width="2*" Binding="{Binding Path=Date}"/>
                 <DataGridTextColumn Header="ФИО" Width="5*" Binding="{Binding Path=Name}"/>
             </DataGrid.Columns>
-            <local:ResultsStub Date="12-12-2012" Name="Петров"/>
-            <local:ResultsStub Date="13-12-2012" Name="Рыбакина"/>
-            <local:ResultsStub Date="14-12-2012" Name="Сивакова"/>
-            <local:ResultsStub Date="15-12-2012" Name="Быховский"/>
+            <local:ResultsStub Date="12-12-2012" Name="Петров Никита"/>
+            <local:ResultsStub Date="14-12-2012" Name="Петров Никита"/>
         </DataGrid>
         <StackPanel Grid.Column="1" Margin="0,25,10,0">
             <Button x:Name="button" Content="Показать"  Margin="5,10"/>
             <Button x:Name="button_Copy" Content="Сохранить"  Margin="5,10"/>
-            <Button x:Name="button_Copy1" Content="Удалить" Margin="5,10"/>
+            <Button x:Name="button_Copy1" Content="Удалить" Margin="5,10" Visibility="Collapsed"/>
         </StackPanel>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="96,116,0,0" TextWrapping="Wrap" Text="Петров" VerticalAlignment="Top" Height="32" Width="528" FontSize="18.667" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="20,157,0,0" TextWrapping="Wrap" Text="Количество повторений:            8" VerticalAlignment="Top" Height="36" Width="307" RenderTransformOrigin="0.32,-0.719" FontSize="16"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="20,187,0,0" TextWrapping="Wrap" Text="Показать график воспроизведений от позиции" VerticalAlignment="Top" Height="36" Width="402" RenderTransformOrigin="0.32,-0.719" FontSize="16" TextDecorations="Underline" Foreground="Blue"/>
 
 
     </Grid>

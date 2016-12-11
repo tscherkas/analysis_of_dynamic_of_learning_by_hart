@@ -17,12 +17,18 @@
             <RowDefinition Height="8*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="Stimuls" Margin="5,10" ></ComboBox>
+        <ComboBox x:Name="Stimuls" Margin="5,10" >
+            <ComboBoxItem IsSelected="True">Стимул 1</ComboBoxItem>
+            <ComboBoxItem>Стимул 2</ComboBoxItem>
+            <ComboBoxItem>Стимул 3</ComboBoxItem>
+            <ComboBoxItem>Стимул 4</ComboBoxItem>
+            <ComboBoxItem>Стимул 5</ComboBoxItem>
+        </ComboBox>
 
         <RichTextBox x:Name="richTextBox" Margin="5,10" Grid.Row="1"  Grid.Column="0" >
             <FlowDocument>
                 <Paragraph>
-                    <Run Text="Stimul"/>
+                    <Run Text="Окно"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
@@ -30,8 +36,8 @@
             <Button x:Name="NewButton" Content="Создать" Margin="5,10" Padding="5,10"/>
             <Button x:Name="PreviewButton" Content="Просмотреть" Margin="5,10" Padding="5,10"/>
             <Button x:Name="SaveButton" Content="Сохранить" Margin="5,10" Padding="5,10"/>
-            <Button x:Name="ImageInsertButton" Content="Image..." Margin="5,10" Padding="5,10"/>
+            <Button x:Name="ImageInsertButton" Content="Картинка..." Margin="5,10" Padding="5,10"/>
         </StackPanel>
-        <TextBox x:Name="keywordsBox" Margin="5,10" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" AcceptsReturn="True" Text="Stimul" TextChanged="keywordsBox_TextChanged"/>
+        <TextBox x:Name="keywordsBox" Margin="5,10" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" AcceptsReturn="True" Text="Окно" TextChanged="keywordsBox_TextChanged"/>
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GUI_module"
       xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
       mc:Ignorable="d"
-      Title="StimulCollectionEdit" Width="250" Height="320">
+      Title="StimulCollectionEdit" MinWidth="250">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,22 +16,25 @@
         <StackPanel HorizontalAlignment="Left"  Margin="10,10" Grid.Column="0">
             <StackPanel Margin="10,10" Orientation="Horizontal">
                 <Label Content="Название:" />
-                <TextBox x:Name="textBox"  Margin="10,5" TextWrapping="Wrap" Text="" Width="120"/>
+                <TextBox x:Name="textBox"  Margin="10,5" TextWrapping="Wrap" Text="Слова, последовательный" />
             </StackPanel>
             <StackPanel Margin="10,10" Orientation="Horizontal">
                 <Label Content="Ряд:" Margin="10,5"/>
-                <ComboBox x:Name="comboBox" Margin="10,5"/>
-            </StackPanel>
-            <StackPanel Margin="10,2" Orientation="Horizontal" >
-                <Label Content="Тренировочный:" />
-                <CheckBox x:Name="TrainingModeCheckBox"  Margin="2,7"/>
+                <ComboBox x:Name="comboBox" Margin="10,5">
+                    <ComboBoxItem IsSelected="True">Ряд слов</ComboBoxItem>
+                    <ComboBoxItem>Ряд изображений</ComboBoxItem>
+                </ComboBox>
             </StackPanel>
             <Label x:Name="label" Content="Тип:" Margin="10,2"/>
             <RadioButton x:Name="radioButton" Content="Последовательный" Margin="10,2" IsChecked="True"/>
             <RadioButton x:Name="radioButton1" Content="Одновременный" Margin="10,2"/>
             <StackPanel Margin="10,10" Orientation="Horizontal">
-                <Label Content="Время, с :" />
-                <wpfTool:IntegerUpDown x:Name="interval" Value="10" Increment="1" Minimum="1" Maximum="600"></wpfTool:IntegerUpDown>
+                <Label Content="Время предъявления, с :" />
+                <wpfTool:IntegerUpDown x:Name="interval1" Value="10" Increment="1" Minimum="1" Maximum="600"></wpfTool:IntegerUpDown>
+            </StackPanel>
+            <StackPanel Margin="10,10" Orientation="Horizontal">
+                <Label Content="Время паузы, с :" />
+                <wpfTool:IntegerUpDown x:Name="interval2" Value="10" Increment="1" Minimum="1" Maximum="600"/>
             </StackPanel>
             <Button x:Name="SaveButton" Content="Сохранить" Margin="10,10" Padding="5,10" HorizontalAlignment="Center"/>
         </StackPanel>

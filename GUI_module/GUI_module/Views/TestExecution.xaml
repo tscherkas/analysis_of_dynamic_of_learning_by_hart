@@ -1,0 +1,40 @@
+﻿<Page x:Class="GUI_module.TestExecution"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GUI_module"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="TestExecution">
+
+    <Grid>
+        <RichTextBox x:Name="richTextBox" Margin="5,10,2,10" FontSize="18.667" FontWeight="Bold" >
+            <FlowDocument>
+                <Paragraph>
+                    <InlineUIContainer>
+                        <Image x:Name="___GUI_module_component_Image2_png" Height="62" Source="/GUI_module;component/Image2.png" Stretch="Fill" Width="70"/>
+                    </InlineUIContainer>
+                    <InlineUIContainer>
+                        <Image x:Name="___GUI_module_component_Image3_png" Height="64" Source="/GUI_module;component/Image3.png" Stretch="Fill" Width="63"/>
+                    </InlineUIContainer>
+                    <InlineUIContainer>
+                        <Image x:Name="___GUI_module_component_Image4_png" Height="63" Source="/GUI_module;component/Image4.png" Stretch="Fill" Width="78"/>
+                    </InlineUIContainer>
+                    <InlineUIContainer>
+                        <Image x:Name="___GUI_module_component_Image5_png" Height="73" Source="/GUI_module;component/Image5.png" Stretch="Fill" Width="63"/>
+                    </InlineUIContainer>
+                    <InlineUIContainer>
+                        <Image Height="114" Width="282">
+                            <Image.Source>
+                                <BitmapImage BaseUri="pack://payload:,,wpf1,/Xaml/Document.xaml" CacheOption="OnLoad" UriSource="./Image1.bmp"/>
+                            </Image.Source>
+                        </Image>
+                    </InlineUIContainer>
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Page>

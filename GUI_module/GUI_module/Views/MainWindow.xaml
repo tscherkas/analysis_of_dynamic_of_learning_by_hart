@@ -11,27 +11,31 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="4*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Label Grid.Row="1" HorizontalAlignment="Center">Фамилия, имя, група</Label>
-        <TextBox Grid.Row="2" HorizontalAlignment="Center" Margin="100,0,100,0" Width="200"></TextBox>
-        <Expander x:Name="expander" Header="Администратор?" HorizontalAlignment="Center" Margin="10,10,10,10" Grid.Row="3" VerticalAlignment="Top">
+        <TextBox Grid.Row="2" HorizontalAlignment="Center" Margin="100,0,100,0" Width="200">Петров Никита, 112352</TextBox>
+        <Expander x:Name="expander" Header="Администратор?" HorizontalAlignment="Center" Margin="10,10,10,10" Grid.Row="3" VerticalAlignment="Top" IsExpanded="False">
             <Grid Background="#FFE5E5E5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" HorizontalAlignment="Center">Пароль</Label>
-                <PasswordBox  Grid.Row="1" Width="200"></PasswordBox>
+                <PasswordBox  Grid.Row="1" Width="200" Password="gfvjhv"></PasswordBox>
+                <TextBlock x:Name="textBlock" Grid.Row="2" Text="Неверный пароль" FontSize="14.667" Foreground="#FFF70F0F" />
+
             </Grid>
         </Expander>
         <Button Grid.Row="4" Margin="100,0,100,0" Width="200" x:Name="EnterButton">Вход</Button>
         <Label Grid.Row="5" HorizontalAlignment="Center">
             <TextBlock TextDecorations="Underline" Foreground="Blue">
                 Теоретические сведения
-            </TextBlock></Label>
-    </Grid>
+            </TextBlock>
+        </Label>
+        </Grid>
 </Window>

@@ -80,41 +80,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdminStartWindow.xaml.cs">
+    <Compile Include="Views\AdminStartWindow.xaml.cs">
       <DependentUpon>AdminStartWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Results.xaml.cs">
+    <Compile Include="Views\Results.xaml.cs">
       <DependentUpon>Results.xaml</DependentUpon>
     </Compile>
     <Compile Include="ResultsStub.cs" />
-    <Compile Include="TestAnswers.xaml.cs">
+    <Compile Include="Views\TestAnswers.xaml.cs">
       <DependentUpon>TestAnswers.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestEdit.xaml.cs">
+    <Compile Include="Views\TestEdit.xaml.cs">
       <DependentUpon>TestEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StimulsCollections.xaml.cs">
+    <Compile Include="Views\StimulsCollections.xaml.cs">
       <DependentUpon>StimulsCollections.xaml</DependentUpon>
     </Compile>
     <Compile Include="StimulsCollectionStub.cs" />
-    <Compile Include="TestExecution.xaml.cs">
+    <Compile Include="Views\TestExecution.xaml.cs">
       <DependentUpon>TestExecution.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tests.xaml.cs">
+    <Compile Include="Views\Tests.xaml.cs">
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestStub.cs" />
-    <Compile Include="StimulEdit.xaml.cs">
+    <Compile Include="Views\StimulEdit.xaml.cs">
       <DependentUpon>StimulEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Theory.xaml.cs">
+    <Compile Include="Views\Theory.xaml.cs">
       <DependentUpon>Theory.xaml</DependentUpon>
     </Compile>
-    <Page Include="AdminStartWindow.xaml">
+    <Page Include="Views\AdminStartWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -122,39 +122,39 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Results.xaml">
+    <Page Include="Views\Results.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TestAnswers.xaml">
+    <Page Include="Views\TestAnswers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestEdit.xaml">
+    <Page Include="Views\TestEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StimulsCollections.xaml">
+    <Page Include="Views\StimulsCollections.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestExecution.xaml">
+    <Page Include="Views\TestExecution.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tests.xaml">
+    <Page Include="Views\Tests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StimulEdit.xaml">
+    <Page Include="Views\StimulEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theory.xaml">
+    <Page Include="Views\Theory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +186,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

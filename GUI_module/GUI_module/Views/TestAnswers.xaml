@@ -2,6 +2,7 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GUI_module"
       mc:Ignorable="d" 
@@ -17,10 +18,19 @@
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="40*"></RowDefinition>
             <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label x:Name="label" Content="Введите то, что запомнили:"  Margin="5,0"/>
-        <TextBox x:Name="textBox"  Grid.Row="1" Margin="5,10"/>
-        <Button x:Name="button" Content="Проверить" Grid.Row="2" Margin="5,5"/>
+        <TextBlock x:Name="textBox"  Grid.Row="1" Margin="5,10">
+            <TextBlock.Resources>
+                <sys:String x:Key="_str1">Окно рыба карандаш</sys:String>
+                <sys:String x:Key="_str2">Еще 5 элементов</sys:String>
+            </TextBlock.Resources>
+            <Run Text="{StaticResource _str1}" />
+            <LineBreak />
+        </TextBlock>
+        <Button x:Name="button" Content="Проверитьь" Grid.Row="2" Margin="5,5"/>
+        <Button x:Name="button1" Content="Закончить тренировочную серию" Grid.Row="3" Margin="5,5"/>
 
 
     </Grid>
