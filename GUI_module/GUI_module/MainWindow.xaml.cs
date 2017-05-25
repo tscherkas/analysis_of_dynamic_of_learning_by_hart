@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Practices.Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,30 +19,48 @@ namespace GUI_module
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IView
     {
         public MainWindow()
         {
             InitializeComponent();
-            EnterButton.Click += EnterApp;
+            ViewModelLocationProvider.AutoWireViewModelChanged(this);
+            //EnterButton.Click += EnterApp;
         }
 
         private void EnterApp(object sender, RoutedEventArgs e)
         {
-            Window w = new Window();
-            w.Title = "Тест";
             if(expander.IsExpanded)
             {
-                (new Results()).Show();
+                /*(new Results()).Show();
                 (new Theory()).Show();
                 (new Tests()).Show();
                 w.Content = new TestEdit();
                 w.Show();
                 (new StimulEdit()).Show();
                 (new StimulsCollections()).Show();
-                (new AdminStartWindow()).Show();
+                (new AdminStartWindow()).Show();*/
             }
            
+        }
+
+        private void EnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            var command = (ICommand)EnterButton.Tag;
+            if (Password.Password == "IP&E")
+            {
+                if (command.CanExecute(true))
+                    command.Execute(true);
+            }
+            else if (string.IsNullOrEmpty(Password.Password))
+            {
+                if (command.CanExecute(false))
+                    command.Execute(false);
+            }
+            else
+            {
+                IncorrectPassword.Visibility = Visibility.Visible;
+            }
         }
     }
 }
