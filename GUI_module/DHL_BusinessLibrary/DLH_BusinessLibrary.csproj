@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D4A29F3C-EB13-423D-9B3C-1F0B5B5FDCD9}</ProjectGuid>
+    <ProjectGuid>{349AD525-F733-4810-BB61-3E2F2B54F332}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DLH_EF_dataconnection</RootNamespace>
-    <AssemblyName>DLH_EF_dataconnection</AssemblyName>
+    <RootNamespace>DHL_BusinessLibrary</RootNamespace>
+    <AssemblyName>DHL_BusinessLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
@@ -47,10 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,40 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DLH_Context.cs" />
-    <Compile Include="DLH_EF_Services\DLH_SettingsService.cs" />
-    <Compile Include="DLH_EF_Services\DLH_StatisticService.cs" />
-    <Compile Include="DLH_EF_Services\DLH_UserService.cs" />
-    <Compile Include="DLH_Interfaces\UserInterface.cs" />
-    <Compile Include="Migrations\201705251347032_changeAnsewer_SurveyToAnswer_Statistic.cs" />
-    <Compile Include="Migrations\201705251347032_changeAnsewer_SurveyToAnswer_Statistic.Designer.cs">
-      <DependentUpon>201705251347032_changeAnsewer_SurveyToAnswer_Statistic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.cs" />
-    <Compile Include="Migrations\201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.Designer.cs">
-      <DependentUpon>201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Answer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs" />
-    <Compile Include="tblAnswer.cs" />
-    <Compile Include="tblSettings.cs" />
-    <Compile Include="tblStatistic.cs" />
-    <Compile Include="tblStimulus.cs" />
-    <Compile Include="tblSurvey.cs" />
-    <Compile Include="tblUser.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Statistic.cs" />
+    <Compile Include="Stimulus.cs" />
+    <Compile Include="Survey.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\DLH_EF_dataconnection\DLH_EF_dataconnection.csproj">
+      <Project>{d4a29f3c-eb13-423d-9b3c-1f0b5b5fdcd9}</Project>
+      <Name>DLH_EF_dataconnection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705251347032_changeAnsewer_SurveyToAnswer_Statistic.resx">
-      <DependentUpon>201705251347032_changeAnsewer_SurveyToAnswer_Statistic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.resx">
-      <DependentUpon>201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

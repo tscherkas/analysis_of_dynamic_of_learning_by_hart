@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DLH_Interfaces
 {
-    interface IUserService
+    public interface IUserService
     {
         ICollection<DLH_DataTransferObjects.DLH_User> loadUser(string FirstName, string LastName, string Group);
         ICollection<DLH_DataTransferObjects.DLH_User> loadUsers(string NameFilter = "" , string GroupFilter = "");
     }
-    interface ISettingsService
+    public interface ISettingsService
     {
         ICollection<DLH_DataTransferObjects.DLH_Settings> loadSettings(DLH_DataTransferObjects.DLH_User user);
         ICollection<DLH_DataTransferObjects.DLH_Settings> loadSettings(string NameDescriptionFilter = "");
@@ -20,7 +20,7 @@ namespace DLH_Interfaces
         bool updateSurvey(DLH_DataTransferObjects.DLH_Survey newSettings);
         bool deleteSurvey(long surveyId);
     }
-    interface IStatisticService
+    public interface IStatisticService
     {
         ICollection<DLH_DataTransferObjects.DLH_Statistic> loadStatistic(DLH_DataTransferObjects.DLH_User user);
         ICollection<DLH_DataTransferObjects.DLH_Statistic> loadStatistic(string NameFilter, string GroupFilter, DateTime fromFilter, DateTime toFilter);

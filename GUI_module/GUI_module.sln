@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_module", "GUI_module\GU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLH_EF_dataconnection", "DLH_EF_dataconnection\DLH_EF_dataconnection.csproj", "{D4A29F3C-EB13-423D-9B3C-1F0B5B5FDCD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLH_BusinessLibrary", "DHL_BusinessLibrary\DLH_BusinessLibrary.csproj", "{349AD525-F733-4810-BB61-3E2F2B54F332}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{D4A29F3C-EB13-423D-9B3C-1F0B5B5FDCD9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4A29F3C-EB13-423D-9B3C-1F0B5B5FDCD9}.Release|x86.ActiveCfg = Release|Any CPU
 		{D4A29F3C-EB13-423D-9B3C-1F0B5B5FDCD9}.Release|x86.Build.0 = Release|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Debug|x86.Build.0 = Debug|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Release|x86.ActiveCfg = Release|Any CPU
+		{349AD525-F733-4810-BB61-3E2F2B54F332}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
