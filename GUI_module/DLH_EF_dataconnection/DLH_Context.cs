@@ -8,7 +8,12 @@ namespace DLH_EF_dataconnection
     public partial class DLH_Context : DbContext
     {
         public DLH_Context()
-            : base("name=DLH_Context")
+            : base("name=database")
+        {
+
+        }
+        public DLH_Context(string connectionString)
+            : base(connectionString)
         {
         }
 
@@ -27,12 +32,34 @@ namespace DLH_EF_dataconnection
                 .IsFixedLength();
 
             modelBuilder.Entity<tblAnswer>()
+                .HasKey(e => e.AnswerId);
+
+            modelBuilder.Entity<tblAnswer>()
+                .Property(e => e.AnswerId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            modelBuilder.Entity<tblAnswer>()
                 .Property(e => e.Value)
                 .IsFixedLength();
+
+
+            modelBuilder.Entity<tblStimulus>()
+                .HasKey(e => e.StimulusId);
+
+            modelBuilder.Entity<tblStimulus>()
+                .Property(e => e.StimulusId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<tblStimulus>()
                 .Property(e => e.DocumentPath)
                 .IsFixedLength();
+
+            modelBuilder.Entity<tblSurvey>()
+                .HasKey(e => e.SurveyId);
+
+            modelBuilder.Entity<tblSurvey>()
+                .Property(e => e.SurveyId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<tblSurvey>()
                 .Property(e => e.Name)
@@ -48,6 +75,13 @@ namespace DLH_EF_dataconnection
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<tblStatistic>()
+                .HasKey(e => e.StatisticId);
+
+            modelBuilder.Entity<tblStatistic>()
+                .Property(e => e.StatisticId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            modelBuilder.Entity<tblStatistic>()
                 .HasMany(e => e.tblAnswers)
                 .WithRequired(e => e.tblStatistic)
                 .WillCascadeOnDelete(false);
@@ -56,6 +90,13 @@ namespace DLH_EF_dataconnection
                 .HasMany(e => e.tblStimulus)
                 .WithRequired(e => e.tblSurvey)
                 .WillCascadeOnDelete(false);
+             
+            modelBuilder.Entity<tblUser>()
+                .HasKey(e => e.UserId);
+
+            modelBuilder.Entity<tblUser>()
+                .Property(e => e.UserId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<tblUser>()
                 .Property(e => e.LastName)

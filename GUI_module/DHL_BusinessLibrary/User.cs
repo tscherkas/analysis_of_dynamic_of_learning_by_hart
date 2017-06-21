@@ -5,18 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using DLH_DataTransferObjects;
 using DLH_Interfaces;
-using Ninject.;
+using Ninject;
 
 namespace DLH_BusinessLibrary
 {
     public class User
     {
-        [Injectable]
-        public IUserService userService { get; set; }
+        private IUserService userService;
+        public User()
+        {
+
+        }
+        public User(IUserService userService)
+        {
+            this.userService = userService;
+        }
         public long ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Group { get; set; }
+        public bool IsAdmin { get; set; }
 
         public ICollection<User> getAllUsers(string nameFilter = "",
             string groupFilter = "")
@@ -30,18 +38,9 @@ namespace DLH_BusinessLibrary
                     Group = u.Group
                 }).ToList();
         }
-        public ICollection<User> saveOrUpdateUser(string FirstName,
-            string LastName,
-            string Group)
+        public void saveOrUpdate()
         {
-            return userService.loadUser(FirstName, LastName,Group)
-                .Select(u => new User()
-                {
-                    ID = u.ID,
-                    FirstName = u.FirstName,
-                    LastName = u.LastName,
-                    Group = u.Group
-                }).ToList();
+            ID = userService.loadUser(FirstName, LastName, Group).First().ID;
         }
     }
 }

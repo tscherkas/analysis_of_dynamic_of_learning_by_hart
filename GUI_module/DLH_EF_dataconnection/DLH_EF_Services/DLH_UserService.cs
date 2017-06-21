@@ -7,8 +7,12 @@ using DLH_DataTransferObjects;
 
 namespace DLH_EF_dataconnection.DLH_EF_Services
 {
-    class DLH_UserService : DLH_Interfaces.IUserService
+    public class DLH_UserService : DLH_Interfaces.IUserService
     {
+        public DLH_UserService(DLH_Context context)
+        {
+            Context = context;
+        }
         public DLH_Context Context { get; set; }
         public ICollection<DLH_User> loadUser(string FirstName, string LastName, string Group)
         {
@@ -35,8 +39,8 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
 
         private DLH_User saveNewUser(string firstName, string lastName, string group)
         {
-            var newUser = new DLH_User() { ID = 0, FirstName = firstName, LastName = lastName, Group = group };
-            Context.tblUser.Add(new tblUser() { UserId = newUser.ID, FirstName = newUser.FirstName, LastName = newUser.LastName, Group = newUser.Group});
+            var newUser = new DLH_User() {  FirstName = firstName, LastName = lastName, Group = group };
+            Context.tblUser.Add(new tblUser() {  FirstName = newUser.FirstName, LastName = newUser.LastName, Group = newUser.Group});
             Context.SaveChanges();
             return newUser;
         }

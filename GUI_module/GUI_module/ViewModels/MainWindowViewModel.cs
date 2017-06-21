@@ -7,23 +7,31 @@ using Microsoft.Practices.Prism.Commands;
 using System.Windows.Input;
 using Microsoft.Practices.Prism.Mvvm;
 using System.Windows;
+using DLH_BusinessLibrary;
 
 namespace GUI_module
 {
-    public class MainWindowViewModel: DependencyObject
+    public class LoginViewModel//: DependencyObject
     {
+        public User User { get; set; }
 
-        public Models.User User { get; set; }
-        
-        public MainWindowViewModel()
+        public LoginViewModel()
         {
-            User = new Models.User();
+
+        }
+        public LoginViewModel(User user)
+        {
             this.Login = new DelegateCommand<object>(this.OnLogin);
+            User = user;
         }
 
         private void OnLogin(object obj)
         {
             User.IsAdmin = (bool)obj;
+            if (!User.IsAdmin)
+            {
+                User.saveOrUpdate();
+            }
         }
 
         public ICommand Login { get; set; }
