@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_module.ViewModels;
+using Microsoft.Practices.Prism.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +29,7 @@ namespace GUI_module
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate("Views\\Login.xaml");
+
         }
     }
 }

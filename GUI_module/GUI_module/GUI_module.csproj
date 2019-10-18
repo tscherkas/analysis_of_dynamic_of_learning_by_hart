@@ -151,7 +151,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\TestsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\AdminStartWindow.xaml.cs">
       <DependentUpon>AdminStartWindow.xaml</DependentUpon>
@@ -176,7 +179,7 @@
     <Compile Include="Views\Tests.xaml.cs">
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestStub.cs" />
+    <Compile Include="Models\Test.cs" />
     <Compile Include="Views\StimulEdit.xaml.cs">
       <DependentUpon>StimulEdit.xaml</DependentUpon>
     </Compile>

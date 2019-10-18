@@ -11,7 +11,7 @@ using DLH_BusinessLibrary;
 
 namespace GUI_module.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel : IViewModel
     {
         public User User { get; set; }
 
@@ -31,12 +31,13 @@ namespace GUI_module.ViewModels
             if (!User.IsAdmin)
             {
                 User.saveOrUpdate();
+                IocKernel.Get<MainViewModel>().ViewModel = IocKernel.Get<TestsViewModel>();
             }
         }
 
         public ICommand Login { get; set; }
         public ICommand ShowTheory { get; set; }
-
+        public ICommand ShowUserTests { get; set; }
         
     }
 }

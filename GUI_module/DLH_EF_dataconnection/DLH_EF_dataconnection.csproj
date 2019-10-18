@@ -62,6 +62,7 @@
     <Compile Include="DLH_Context.cs" />
     <Compile Include="DLH_EF_Services\DLH_SettingsService.cs" />
     <Compile Include="DLH_EF_Services\DLH_StatisticService.cs" />
+    <Compile Include="DLH_EF_Services\DLH_SurveyService.cs" />
     <Compile Include="DLH_EF_Services\DLH_UserService.cs" />
     <Compile Include="Migrations\201910181105468_Initial-Create.cs" />
     <Compile Include="Migrations\201910181105468_Initial-Create.Designer.cs">

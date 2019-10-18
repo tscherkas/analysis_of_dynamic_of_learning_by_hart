@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_module"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300">
-    <Grid>
-        <Frame x:Name="frame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-
-    </Grid>
+        Title="MainWindow"
+        DataContext="{Binding MainViewModel, Source={StaticResource ViewModelLocator}}">
+    <ContentControl Content="{Binding ViewModel}" />
 </Window>

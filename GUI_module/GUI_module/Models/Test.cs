@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI_module
+namespace GUI_module.Models
 {
-    public class TestStub
+    public class Test
     {
         public string Name { get; set; }
         public string Type { get; set; }

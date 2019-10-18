@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DLH_DataTransferObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,14 @@ namespace DLH_Interfaces
     }
     public interface IStatisticService
     {
-        ICollection<DLH_DataTransferObjects.DLH_Statistic> loadStatistic(DLH_DataTransferObjects.DLH_User user);
-        ICollection<DLH_DataTransferObjects.DLH_Statistic> loadStatistic(string NameFilter, string GroupFilter, DateTime fromFilter, DateTime toFilter);
-        bool saveStatistic(DLH_DataTransferObjects.DLH_Statistic statistic);
+        ICollection<DLH_Statistic> loadStatistic(DLH_User user);
+        ICollection<DLH_Statistic> loadStatistic(string NameFilter, string GroupFilter, DateTime fromFilter, DateTime toFilter);
+        bool saveStatistic(DLH_Statistic statistic);
+    }
+
+    public interface ISurveyService
+    {
+        ICollection<DLH_Survey> loadSurveys();
     }
 }
 namespace DLH_DataTransferObjects

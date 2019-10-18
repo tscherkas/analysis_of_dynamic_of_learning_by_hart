@@ -20,7 +20,7 @@ namespace GUI_module.Views
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Login : Window, IView
+    public partial class Login : UserControl, IView
     {
         public Login()
         {

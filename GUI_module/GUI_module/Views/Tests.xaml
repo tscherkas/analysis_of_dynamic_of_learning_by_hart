@@ -1,22 +1,20 @@
-﻿<Window x:Class="GUI_module.Tests"
+﻿<UserControl x:Class="GUI_module.Views.Tests"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:GUI_module"
-        Title="Опыты" Height="300" Width="800">
+        xmlns:local="clr-namespace:GUI_module" Height="300" Width="800"        
+        DataContext="{Binding TestsViewModel, Source={StaticResource ViewModelLocator}}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Margin="10,10,3,3" VerticalAlignment="Top" >
+        <DataGrid ItemsSource="{Binding Tests}"
+            HorizontalAlignment="Left" Margin="10,10,3,3" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Опыт" Width="2*" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Тип" Width="1*" Binding="{Binding Path=Type}"/>
                 <DataGridTextColumn Header="Описание" Width="3*" Binding="{Binding Path=Description}"/>
             </DataGrid.Columns>
-            <local:TestStub Name="Тест1" Description="Несвязанные слова" Type="Последовательный"/>
-            <local:TestStub Name="Тест2" Description="Предложение" Type="Одновременный"/>
-
         </DataGrid>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="422" Margin="5,38,0,0" VerticalAlignment="Top" Width="100">
             <Button x:Name="button" Content="Выполнить" Margin="5,10"/>
@@ -26,4 +24,4 @@
         </StackPanel>
 
     </Grid>
-</Window>
+</UserControl>

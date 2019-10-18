@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GUI_module
+namespace GUI_module.Views
 {
     /// <summary>
     /// Interaction logic for Tests.xaml
     /// </summary>
-    public partial class Tests : Window
+    public partial class Tests : UserControl
     {
         public Tests()
         {

@@ -12,9 +12,11 @@ namespace GUI_module
         {
             Bind<DLH_EF_dataconnection.DLH_Context>().ToSelf().InSingletonScope().WithConstructorArgument("connectionString", "name = database");
             Bind<IUserService>().To<DLH_UserService>().InSingletonScope();
+            Bind<ISurveyService>().To<DLH_SurveyService>().InSingletonScope();
             Bind<DLH_BusinessLibrary.User>().ToSelf().InTransientScope();
-            Bind<Login>().ToSelf().InSingletonScope();
             Bind<LoginViewModel>().ToSelf().InSingletonScope();
+            Bind<MainViewModel>().ToSelf().InSingletonScope();
+            Bind<TestsViewModel>().ToSelf().InSingletonScope();
         }
     }
 }

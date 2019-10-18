@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GUI_module
+namespace GUI_module.Views
 {
     /// <summary>
     /// Interaction logic for StimulCollectionEdit.xaml
