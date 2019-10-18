@@ -91,7 +91,7 @@ namespace DLH_EF_dataconnection
                 .WithRequired(e => e.tblSurvey)
                 .WillCascadeOnDelete(false);
              
-            modelBuilder.Entity<tblUser>()
+            /*modelBuilder.Entity<tblUser>()
                 .HasKey(e => e.UserId);
 
             modelBuilder.Entity<tblUser>()
@@ -113,7 +113,7 @@ namespace DLH_EF_dataconnection
             modelBuilder.Entity<tblUser>()
                 .HasMany(e => e.tblStatistic)
                 .WithRequired(e => e.tblUser)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(false);*/
         }
     }
 }

@@ -63,29 +63,9 @@
     <Compile Include="DLH_EF_Services\DLH_SettingsService.cs" />
     <Compile Include="DLH_EF_Services\DLH_StatisticService.cs" />
     <Compile Include="DLH_EF_Services\DLH_UserService.cs" />
-    <Compile Include="Migrations\201705251347032_changeAnsewer_SurveyToAnswer_Statistic.cs" />
-    <Compile Include="Migrations\201705251347032_changeAnsewer_SurveyToAnswer_Statistic.Designer.cs">
-      <DependentUpon>201705251347032_changeAnsewer_SurveyToAnswer_Statistic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.cs" />
-    <Compile Include="Migrations\201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.Designer.cs">
-      <DependentUpon>201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706200536129_20170620_Primary_keys.cs" />
-    <Compile Include="Migrations\201706200536129_20170620_Primary_keys.Designer.cs">
-      <DependentUpon>201706200536129_20170620_Primary_keys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706210222312_resetUserKey.cs" />
-    <Compile Include="Migrations\201706210222312_resetUserKey.Designer.cs">
-      <DependentUpon>201706210222312_resetUserKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706210225026_setUserKey.cs" />
-    <Compile Include="Migrations\201706210225026_setUserKey.Designer.cs">
-      <DependentUpon>201706210225026_setUserKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706210247562_setUserKey1.cs" />
-    <Compile Include="Migrations\201706210247562_setUserKey1.Designer.cs">
-      <DependentUpon>201706210247562_setUserKey1.cs</DependentUpon>
+    <Compile Include="Migrations\201910181105468_Initial-Create.cs" />
+    <Compile Include="Migrations\201910181105468_Initial-Create.Designer.cs">
+      <DependentUpon>201910181105468_Initial-Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,30 +82,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705251347032_changeAnsewer_SurveyToAnswer_Statistic.resx">
-      <DependentUpon>201705251347032_changeAnsewer_SurveyToAnswer_Statistic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.resx">
-      <DependentUpon>201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706200536129_20170620_Primary_keys.resx">
-      <DependentUpon>201706200536129_20170620_Primary_keys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706210222312_resetUserKey.resx">
-      <DependentUpon>201706210222312_resetUserKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706210225026_setUserKey.resx">
-      <DependentUpon>201706210225026_setUserKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706210247562_setUserKey1.resx">
-      <DependentUpon>201706210247562_setUserKey1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DLH_Shared\DLH_Shared.csproj">
       <Project>{d896feec-0e14-4e7d-857c-dbe37aece736}</Project>
       <Name>DLH_Shared</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910181105468_Initial-Create.resx">
+      <DependentUpon>201910181105468_Initial-Create.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

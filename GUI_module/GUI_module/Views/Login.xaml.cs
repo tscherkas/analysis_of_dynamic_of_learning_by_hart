@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Prism.Mvvm;
+﻿using GUI_module.ViewModels;
+using Microsoft.Practices.Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GUI_module
+namespace GUI_module.Views
 {
     /// <summary>
     /// Interaction logic for Login.xaml
@@ -23,13 +24,12 @@ namespace GUI_module
     {
         public Login()
         {
+            InitializeComponent();
         }
         public Login(LoginViewModel vModel)
         {
             DataContext = vModel;
-            InitializeComponent();
             Loaded += MainWindow_Loaded;
-            //EnterButton.Click += EnterApp;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)

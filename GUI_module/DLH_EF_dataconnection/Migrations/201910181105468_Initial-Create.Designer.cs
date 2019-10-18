@@ -7,13 +7,13 @@ namespace DLH_EF_dataconnection.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class changeAnsewer_SurveyToAnswer_Statistic_p2 : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changeAnsewer_SurveyToAnswer_Statistic_p2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705251401177_changeAnsewer_SurveyToAnswer_Statistic_p2"; }
+            get { return "201910181105468_Initial-Create"; }
         }
         
         string IMigrationMetadata.Source

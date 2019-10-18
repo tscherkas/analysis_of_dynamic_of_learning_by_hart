@@ -3,7 +3,7 @@ namespace DLH_EF_dataconnection.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class changeAnsewer_SurveyToAnswer_Statistic : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -23,7 +23,7 @@ namespace DLH_EF_dataconnection.Migrations
                 "dbo.tblAnswer",
                 c => new
                     {
-                        AnswerId = c.Long(nullable: false),
+                        AnswerId = c.Long(nullable: false, identity: true),
                         AnswerDateTime = c.String(maxLength: 10, fixedLength: true),
                         StimulusId = c.Long(),
                         StatisticId = c.Long(nullable: false),
@@ -39,29 +39,26 @@ namespace DLH_EF_dataconnection.Migrations
                 "dbo.tblStatistic",
                 c => new
                     {
-                        StatisticId = c.Long(nullable: false),
+                        StatisticId = c.Long(nullable: false, identity: true),
                         UserId = c.Long(nullable: false),
                         Date = c.Long(nullable: false),
                         NumberOfCycles = c.Long(nullable: false),
                         Pause = c.Time(nullable: false, precision: 7),
                         Interval = c.Time(nullable: false, precision: 7),
                         DynamicData = c.String(nullable: false, maxLength: 100),
-                        tblSurvey_SurveyId = c.Long(),
                     })
                 .PrimaryKey(t => t.StatisticId)
-                .ForeignKey("dbo.tblUser", t => t.UserId)
-                .ForeignKey("dbo.tblSurvey", t => t.tblSurvey_SurveyId)
-                .Index(t => t.UserId)
-                .Index(t => t.tblSurvey_SurveyId);
+                .ForeignKey("dbo.tblUser", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.tblUser",
                 c => new
                     {
-                        UserId = c.Long(nullable: false),
-                        LastName = c.String(nullable: false, maxLength: 100, fixedLength: true),
-                        FirstName = c.String(nullable: false, maxLength: 100, fixedLength: true),
-                        Group = c.String(nullable: false, maxLength: 50, fixedLength: true),
+                        UserId = c.Long(nullable: false, identity: true),
+                        LastName = c.String(nullable: false, maxLength: 100),
+                        FirstName = c.String(nullable: false, maxLength: 100),
+                        Group = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.UserId);
             
@@ -69,7 +66,7 @@ namespace DLH_EF_dataconnection.Migrations
                 "dbo.tblStimulus",
                 c => new
                     {
-                        StimulusId = c.Long(nullable: false),
+                        StimulusId = c.Long(nullable: false, identity: true),
                         SurveyId = c.Long(nullable: false),
                         DocumentPath = c.String(nullable: false, maxLength: 1000, fixedLength: true),
                     })
@@ -81,7 +78,7 @@ namespace DLH_EF_dataconnection.Migrations
                 "dbo.tblSurvey",
                 c => new
                     {
-                        SurveyId = c.Long(nullable: false),
+                        SurveyId = c.Long(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 1000, fixedLength: true),
                         Description = c.String(nullable: false, maxLength: 1000, fixedLength: true),
                     })
@@ -105,14 +102,12 @@ namespace DLH_EF_dataconnection.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.tblStimulus", "SurveyId", "dbo.tblSurvey");
-            DropForeignKey("dbo.tblStatistic", "tblSurvey_SurveyId", "dbo.tblSurvey");
             DropForeignKey("dbo.tblSettings", "SurveyId", "dbo.tblSurvey");
             DropForeignKey("dbo.tblAnswer", "StimulusId", "dbo.tblStimulus");
             DropForeignKey("dbo.tblStatistic", "UserId", "dbo.tblUser");
             DropForeignKey("dbo.tblAnswer", "StatisticId", "dbo.tblStatistic");
             DropIndex("dbo.tblSettings", new[] { "SurveyId" });
             DropIndex("dbo.tblStimulus", new[] { "SurveyId" });
-            DropIndex("dbo.tblStatistic", new[] { "tblSurvey_SurveyId" });
             DropIndex("dbo.tblStatistic", new[] { "UserId" });
             DropIndex("dbo.tblAnswer", new[] { "StatisticId" });
             DropIndex("dbo.tblAnswer", new[] { "StimulusId" });

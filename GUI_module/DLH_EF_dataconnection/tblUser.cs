@@ -28,7 +28,7 @@ namespace DLH_EF_dataconnection
         public string Group { get; set; }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long UserId { get; set; }
         
 

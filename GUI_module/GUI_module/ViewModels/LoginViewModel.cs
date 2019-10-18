@@ -9,9 +9,9 @@ using Microsoft.Practices.Prism.Mvvm;
 using System.Windows;
 using DLH_BusinessLibrary;
 
-namespace GUI_module
+namespace GUI_module.ViewModels
 {
-    public class LoginViewModel//: DependencyObject
+    public class LoginViewModel
     {
         public User User { get; set; }
 
