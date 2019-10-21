@@ -52,8 +52,8 @@ namespace GUI_module.Views
             }
            
         }
-
-        private void EnterButton_Click(object sender, RoutedEventArgs e)
+        
+        /*private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
             //ViewModelLocationProvider.AutoWireViewModelChanged(this);
             var command = (ICommand)EnterButton.Tag;
@@ -71,6 +71,6 @@ namespace GUI_module.Views
             {
                 IncorrectPassword.Visibility = Visibility.Visible;
             }
-        }
+        }*/
     }
 }

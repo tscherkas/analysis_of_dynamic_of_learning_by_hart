@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Prism.Commands;
+﻿using GUI_module.Services;
+using Microsoft.Practices.Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Windows.Input;
 
 namespace GUI_module.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged, IViewContainer
     {
         public IViewModel ViewModel
         {
@@ -37,6 +38,7 @@ namespace GUI_module.ViewModels
         {
             this.GoToLogin = new DelegateCommand<object>(this.OnGoToLogin);
             this.GoToView = new DelegateCommand<IViewModel>(this.OnGoToView);
+            IocKernel.Get<INavigationService>().setupContainer(this);
         }
 
         private void OnGoToLogin(object obj)

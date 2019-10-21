@@ -151,6 +151,9 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="ViewModels\IViewContainer.cs" />
     <Compile Include="ViewModels\IViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

@@ -17,7 +17,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="422" Margin="5,38,0,0" VerticalAlignment="Top" Width="100">
-            <Button x:Name="button" Content="Выполнить" Margin="5,10"/>
+            <Button x:Name="button" Content="Выполнить" Command="{Binding StartTest}" Margin="5,10"/>
             <Button x:Name="button_Copy" Content="Изменить" Margin="5,10" Visibility="Collapsed"/>
             <Button x:Name="button_Copy1" Content="Ряд..." Margin="5,10" Visibility="Collapsed"/>
             <Button x:Name="button_Copy2" Content="Удалить" Margin="5,10" Visibility="Collapsed"/>
