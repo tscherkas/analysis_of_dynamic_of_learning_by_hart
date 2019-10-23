@@ -22,9 +22,21 @@ namespace GUI_module.Services
             container.ViewModel = IocKernel.Get<LoginViewModel>();
         }
 
-        public void navigateToTests()
+        public void navigateToTests(bool adminAccess = false)
         {
-            container.ViewModel = IocKernel.Get<TestsViewModel>();
+            if (adminAccess)
+            {
+                container.ViewModel = IocKernel.Get<EditTestsViewModel>();
+            }
+            else
+            {
+                container.ViewModel = IocKernel.Get<TestsViewModel>();
+            }
+        }
+
+        public void navigateToAdminMenu()
+        {
+            container.ViewModel = IocKernel.Get<AdminStartWindowViewModel>();
         }
 
         private IViewContainer container;

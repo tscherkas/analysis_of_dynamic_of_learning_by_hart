@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GUI_module
+namespace GUI_module.Views
 {
     /// <summary>
     /// Interaction logic for AdminStartWindow.xaml
     /// </summary>
-    public partial class AdminStartWindow : Window
+    public partial class AdminStartWindowView : UserControl
     {
-        public AdminStartWindow()
+        public AdminStartWindowView()
         {
             InitializeComponent();
         }

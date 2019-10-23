@@ -11,5 +11,7 @@ namespace GUI_module.ViewModels
         public LoginViewModel LoginViewModel { get { return IocKernel.Get<LoginViewModel>(); } }
         public MainViewModel MainViewModel { get { return IocKernel.Get<MainViewModel>(); } }
         public TestsViewModel TestsViewModel { get { return IocKernel.Get<TestsViewModel>(); } }
+        public EditTestsViewModel EditTestsViewModel { get { return IocKernel.Get<EditTestsViewModel>(); } }
+        public AdminStartWindowViewModel AdminStartWindowViewModel { get { return IocKernel.Get<AdminStartWindowViewModel>(); } }
     }
 }

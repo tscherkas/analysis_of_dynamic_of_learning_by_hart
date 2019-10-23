@@ -36,7 +36,8 @@
                 <TextBlock x:Name="IncorrectPassword" Text="Неверный пароль" FontSize="14.667" Foreground="#FFF70F0F" Visibility="Hidden"/>
             </StackPanel>
         </Expander>
-        <Button Grid.Row="8" Margin="100,0,100,0" Width="200" x:Name="EnterButton" Command="{Binding Login}">Приступить к выполению опытов</Button>
+        <Button Grid.Row="8" Margin="100,0,100,0" Width="200" x:Name="EnterButton"
+                Click="EnterButton_Click" Tag="{Binding Login}">Приступить к выполению опытов</Button>
         <Label Grid.Row="9" HorizontalAlignment="Center">
             <TextBlock TextDecorations="Underline" Foreground="Blue">
                 Теоретические сведения

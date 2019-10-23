@@ -153,14 +153,17 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="ViewModels\AdminStartWindowViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\IViewContainer.cs" />
     <Compile Include="ViewModels\IViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\EditTestsViewModel.cs" />
     <Compile Include="ViewModels\TestsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
-    <Compile Include="Views\AdminStartWindow.xaml.cs">
-      <DependentUpon>AdminStartWindow.xaml</DependentUpon>
+    <Compile Include="Views\AdminStartWindowView.xaml.cs">
+      <DependentUpon>AdminStartWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Results.xaml.cs">
       <DependentUpon>Results.xaml</DependentUpon>
@@ -179,6 +182,9 @@
     <Compile Include="Views\TestExecution.xaml.cs">
       <DependentUpon>TestExecution.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditTests.xaml.cs">
+      <DependentUpon>EditTests.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Tests.xaml.cs">
       <DependentUpon>Tests.xaml</DependentUpon>
     </Compile>
@@ -193,7 +199,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AdminStartWindow.xaml">
+    <Page Include="Views\AdminStartWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,6 +234,10 @@
     <Page Include="Views\TestExecution.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditTests.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Tests.xaml">
       <SubType>Designer</SubType>

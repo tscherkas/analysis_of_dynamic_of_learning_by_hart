@@ -14,5 +14,11 @@
         <DataTemplate DataType="{x:Type ViewModels:TestsViewModel}">
             <Views:Tests />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:EditTestsViewModel}">
+            <Views:EditTests />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:AdminStartWindowViewModel}">
+            <Views:AdminStartWindowView />
+        </DataTemplate>
     </Application.Resources>
 </Application>

@@ -53,17 +53,18 @@ namespace GUI_module.Views
            
         }
         
-        /*private void EnterButton_Click(object sender, RoutedEventArgs e)
+        private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-            //ViewModelLocationProvider.AutoWireViewModelChanged(this);
             var command = (ICommand)EnterButton.Tag;
             if (string.IsNullOrEmpty(Password.Password))
             {
+                IncorrectPassword.Visibility = Visibility.Hidden;
                 if (command.CanExecute(false))
                     command.Execute(false);
             }
             else if (Password.Password == "IP&E")
             {
+                IncorrectPassword.Visibility = Visibility.Hidden;
                 if (command.CanExecute(true))
                     command.Execute(true);
             }
@@ -71,6 +72,6 @@ namespace GUI_module.Views
             {
                 IncorrectPassword.Visibility = Visibility.Visible;
             }
-        }*/
+        }
     }
 }

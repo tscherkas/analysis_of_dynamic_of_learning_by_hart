@@ -11,21 +11,21 @@ using System.Windows.Input;
 
 namespace GUI_module.ViewModels
 {
-    public class TestsViewModel : BaseViewModel
+    public class EditTestsViewModel : BaseViewModel
     {
         public IEnumerable<Test> Tests { get; set; }    
-        public TestsViewModel(ISurveyService surveyService,
-            INavigationService navigationService)
-            : base(navigationService)
+        public EditTestsViewModel(ISurveyService surveyService,
+            INavigationService navigationService):
+            base(navigationService)
         {
             this.surveyService = surveyService;
-            StartTest = new DelegateCommand<object>(this.OnStartTest);
+            EditTest = new DelegateCommand<object>(this.OnEditTest);
             loadSurveys();
         }
 
-        public ICommand StartTest { get; set; }
+        public ICommand EditTest { get; set; }
 
-        private void OnStartTest(object obj)
+        private void OnEditTest(object obj)
         {
             navigationService.navigateToLogin();
         }

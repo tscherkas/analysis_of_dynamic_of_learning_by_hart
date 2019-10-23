@@ -6,6 +6,7 @@ namespace GUI_module.Services
     {
         void setupContainer(IViewContainer container, IViewModel model = null);
         void navigateToLogin();
-        void navigateToTests();
+        void navigateToTests(bool adminAccess = false);
+        void navigateToAdminMenu();
     }
 }
