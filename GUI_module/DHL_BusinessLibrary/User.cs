@@ -9,6 +9,9 @@ using Ninject;
 
 namespace DLH_BusinessLibrary
 {
+    /// <summary>
+    /// User object
+    /// </summary>
     public class User
     {
         private IUserService userService;
@@ -20,10 +23,29 @@ namespace DLH_BusinessLibrary
         {
             this.userService = userService;
         }
+        /// <summary>
+        /// Identifier
+        /// </summary>
         public long ID { get; set; }
+
+        /// <summary>
+        /// First name
+        /// </summary>
         public string FirstName { get; set; }
+
+        /// <summary>
+        /// Last name
+        /// </summary>
         public string LastName { get; set; }
+
+        /// <summary>
+        /// Group
+        /// </summary>
         public string Group { get; set; }
+
+        /// <summary>
+        /// Property indicates if user is admin
+        /// </summary>
         public bool IsAdmin { get; set; }
 
         public ICollection<User> getAllUsers(string nameFilter = "",

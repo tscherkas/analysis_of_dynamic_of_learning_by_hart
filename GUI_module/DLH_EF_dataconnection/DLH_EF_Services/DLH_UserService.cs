@@ -9,18 +9,34 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
 {
     public class DLH_UserService : DLH_Interfaces.IUserService
     {
+        /// <summary>
+        /// Create a service instance
+        /// </summary>
+        /// <param name="context">Database context</param>
         public DLH_UserService(DLH_Context context)
         {
             Context = context;
         }
+
+        /// <summary>
+        /// Database context
+        /// </summary>
         public DLH_Context Context { get; set; }
-        public ICollection<DLH_User> loadUser(string FirstName, string LastName, string Group)
+
+        /// <summary>
+        /// Load a user object by params
+        /// </summary>
+        /// <param name="firstName">First name</param>
+        /// <param name="lastName">Last name</param>
+        /// <param name="group">Group</param>
+        /// <returns>Collection of users objects</returns>
+        public ICollection<DLH_User> loadUser(string firstName, string lastName, string group)
         {
             var usersList = Context.tblUser
                 .Where(u =>
-                    u.FirstName == FirstName &&
-                    u.LastName == LastName &&
-                    u.Group == Group)
+                    u.FirstName == firstName &&
+                    u.LastName == lastName &&
+                    u.Group == group)
                 .Select(u => new DLH_User()
                 {
                     ID = u.UserId,
@@ -33,10 +49,16 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
                 return usersList;
             else
             {
-                return new List<DLH_User>() { saveNewUser(FirstName, LastName, Group) };
+                return new List<DLH_User>() { saveNewUser(firstName, lastName, group) };
             }
         }
 
+        /// <summary>
+        /// Save or add user
+        /// </summary>
+        /// <param name="firstName">First name</param>
+        /// <param name="lastName">Last name</param>
+        /// <param name="group">Group</param>
         private DLH_User saveNewUser(string firstName, string lastName, string group)
         {
             var newUser = new DLH_User() {  FirstName = firstName, LastName = lastName, Group = group };
