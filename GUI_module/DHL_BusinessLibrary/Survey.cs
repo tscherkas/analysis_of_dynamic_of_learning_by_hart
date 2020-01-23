@@ -29,7 +29,7 @@ namespace DLH_BusinessLibrary
         /// <summary>
         /// Stimulus collection
         /// </summary>
-        public ICollection<Stimulus> stimulus { get; set; }
+        public IEnumerable<Stimulus> stimulus { get; set; }
 
         /// <summary>
         /// Name

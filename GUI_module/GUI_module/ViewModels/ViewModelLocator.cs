@@ -13,5 +13,6 @@ namespace GUI_module.ViewModels
         public TestsViewModel TestsViewModel { get { return IocKernel.Get<TestsViewModel>(); } }
         public EditTestsViewModel EditTestsViewModel { get { return IocKernel.Get<EditTestsViewModel>(); } }
         public AdminStartWindowViewModel AdminStartWindowViewModel { get { return IocKernel.Get<AdminStartWindowViewModel>(); } }
+        public StimulsCollectionsViewModel StimulsCollectionsViewModel { get { return IocKernel.Get<StimulsCollectionsViewModel>(); } }
     }
 }

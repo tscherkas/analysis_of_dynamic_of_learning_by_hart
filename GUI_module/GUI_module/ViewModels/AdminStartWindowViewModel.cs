@@ -12,16 +12,22 @@ namespace GUI_module.ViewModels
     public class AdminStartWindowViewModel: BaseViewModel
     {
         public ICommand Tests { get; set; }
+        public ICommand StimulsGroups { get; set; }
 
         public AdminStartWindowViewModel(INavigationService navigationService):
             base(navigationService)
         {
             Tests = new DelegateCommand<object>(goToTests);
+            StimulsGroups = new DelegateCommand<object>(goToStimulsGroups);
         }
 
         private void goToTests(object obj)
         {
-            navigationService.navigateToTests(true);
+            navigationService.navigateToTests();
+        }
+        private void goToStimulsGroups(object obj)
+        {
+            navigationService.navigateToStimulsGroups();
         }
     }
 }

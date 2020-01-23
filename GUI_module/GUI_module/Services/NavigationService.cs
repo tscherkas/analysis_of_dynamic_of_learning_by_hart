@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DLH_BusinessLibrary;
 using GUI_module.ViewModels;
 
 namespace GUI_module.Services
@@ -22,9 +23,9 @@ namespace GUI_module.Services
             container.ViewModel = IocKernel.Get<LoginViewModel>();
         }
 
-        public void navigateToTests(bool adminAccess = false)
+        public void navigateToTests()
         {
-            if (adminAccess)
+            if (this.user.IsAdmin)
             {
                 container.ViewModel = IocKernel.Get<EditTestsViewModel>();
             }
@@ -39,7 +40,24 @@ namespace GUI_module.Services
             container.ViewModel = IocKernel.Get<AdminStartWindowViewModel>();
         }
 
+        public void navigateToStimulsGroups()
+        {
+            container.ViewModel = IocKernel.Get<StimulsCollectionsViewModel>();
+        }
+        public void setCurrentUser(User user)
+        {
+            this.user = user;
+        }
+
+        public User getCurrentUser()
+        {
+            return this.user;
+        }
+
+
         private IViewContainer container;
+
+        private User user;
 
     }
 }

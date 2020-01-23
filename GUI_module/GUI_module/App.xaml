@@ -20,5 +20,8 @@
         <DataTemplate DataType="{x:Type ViewModels:AdminStartWindowViewModel}">
             <Views:AdminStartWindowView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:StimulsCollectionsViewModel}">
+            <Views:StimulsCollections />
+        </DataTemplate>
     </Application.Resources>
 </Application>

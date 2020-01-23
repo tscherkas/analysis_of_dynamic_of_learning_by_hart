@@ -13,7 +13,6 @@ namespace DLH_EF_dataconnection
         public tblSurvey()
         {
             tblSettings = new HashSet<tblSettings>();
-            tblStimulus = new HashSet<tblStimulus>();
         }
 
         [Key]
@@ -31,7 +30,6 @@ namespace DLH_EF_dataconnection
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblSettings> tblSettings { get; set; }
         
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblStimulus> tblStimulus { get; set; }
+        public virtual tblStimulusGroup StimulusGroup { get; set; }
     }
 }

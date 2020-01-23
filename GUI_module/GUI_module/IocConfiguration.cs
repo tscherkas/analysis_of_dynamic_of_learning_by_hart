@@ -22,6 +22,7 @@ namespace GUI_module
             Bind<TestsViewModel>().ToSelf().InTransientScope();
             Bind<EditTestsViewModel>().ToSelf().InTransientScope();
             Bind<AdminStartWindowViewModel>().ToSelf().InTransientScope();
+            Bind<StimulsCollectionsViewModel>().ToSelf().InTransientScope();
 
             Bind<IViewContainer>().To<MainViewModel>().InSingletonScope();
             Bind<INavigationService>().To<NavigationService>().InSingletonScope();

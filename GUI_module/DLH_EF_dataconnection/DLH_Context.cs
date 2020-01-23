@@ -85,12 +85,7 @@ namespace DLH_EF_dataconnection
                 .HasMany(e => e.tblAnswers)
                 .WithRequired(e => e.tblStatistic)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<tblSurvey>()
-                .HasMany(e => e.tblStimulus)
-                .WithRequired(e => e.tblSurvey)
-                .WillCascadeOnDelete(false);
-             
+                         
             /*modelBuilder.Entity<tblUser>()
                 .HasKey(e => e.UserId);
 

@@ -31,7 +31,7 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         /// Load list of surveys
         /// </summary>
         /// <returns>Collection of surveys</returns>
-        public ICollection<DLH_Survey> loadSurveys()
+        public IEnumerable<DLH_Survey> loadSurveys()
         {
             return Context.tblSurvey
                 .Select(s => new DLH_Survey()
@@ -39,7 +39,22 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
                     ID = s.SurveyId,
                     name = s.Name,
                     desription = s.Description
+                });
+        }
+
+        public IEnumerable<DLH_Stimulus> loadStimulus()
+        {
+            List<DLH_Stimulus> ret = null;
+            var survey = Context.tblSurvey
+                .Select(s => s).First();
+            ret = survey.StimulusGroup.Stimulus
+                .Select(s => new DLH_Stimulus()
+                {
+                    ID = s.StimulusId,
+                    value = s.DocumentPath
                 }).ToList();
+
+            return ret;
         }
     }
 }

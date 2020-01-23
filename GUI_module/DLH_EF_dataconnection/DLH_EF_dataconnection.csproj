@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201910181105468_Initial-Create.Designer.cs">
       <DependentUpon>201910181105468_Initial-Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001231258549_Add Stimulus groups.cs" />
+    <Compile Include="Migrations\202001231258549_Add Stimulus groups.Designer.cs">
+      <DependentUpon>202001231258549_Add Stimulus groups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs" />
@@ -75,6 +79,7 @@
     <Compile Include="tblSettings.cs" />
     <Compile Include="tblStatistic.cs" />
     <Compile Include="tblStimulus.cs" />
+    <Compile Include="tblStimulusGroup.cs" />
     <Compile Include="tblSurvey.cs" />
     <Compile Include="tblUser.cs" />
   </ItemGroup>
@@ -91,6 +96,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910181105468_Initial-Create.resx">
       <DependentUpon>201910181105468_Initial-Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001231258549_Add Stimulus groups.resx">
+      <DependentUpon>202001231258549_Add Stimulus groups.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

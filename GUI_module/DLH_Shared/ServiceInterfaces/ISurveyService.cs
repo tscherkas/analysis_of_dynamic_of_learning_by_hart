@@ -12,6 +12,9 @@ namespace DLH_Interfaces
         /// Load surveys
         /// </summary>
         /// <returns>Surveys objects collection</returns>
-        ICollection<DLH_Survey> loadSurveys();
+        IEnumerable<DLH_Survey> loadSurveys();
+
+
+        IEnumerable<DLH_Stimulus> loadStimulus();
     }
 }

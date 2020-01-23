@@ -35,6 +35,6 @@ namespace DLH_DataTransferObjects
         /// <summary>
         /// Answers collections
         /// </summary>
-        public ICollection<DLH_Answer> answers { get; set; }
+        public IEnumerable<DLH_Answer> answers { get; set; }
     }
 }

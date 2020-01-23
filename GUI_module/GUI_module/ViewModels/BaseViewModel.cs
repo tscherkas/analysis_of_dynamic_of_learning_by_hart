@@ -1,4 +1,5 @@
-﻿using GUI_module.Services;
+﻿using DLH_BusinessLibrary;
+using GUI_module.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,9 @@ namespace GUI_module.ViewModels
     public class BaseViewModel : IViewModel, INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a base viewmodel and initialize navigation service 
+        /// Create a base viewmodel and initialize navigation service.
         /// </summary>
-        /// <param name="navigationService">Navigation service</param>
+        /// <param name="navigationService">Navigation service.</param>
         public BaseViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;

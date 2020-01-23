@@ -48,21 +48,5 @@ namespace DLH_BusinessLibrary
         /// </summary>
         public bool IsAdmin { get; set; }
 
-        public ICollection<User> getAllUsers(string nameFilter = "",
-            string groupFilter = "")
-        {
-            return userService.loadUsers(nameFilter, groupFilter)
-                .Select(u => new User()
-                {
-                    ID = u.ID,
-                    FirstName = u.FirstName,
-                    LastName = u.LastName,
-                    Group = u.Group
-                }).ToList();
-        }
-        public void saveOrUpdate()
-        {
-            ID = userService.loadUser(FirstName, LastName, Group).First().ID;
-        }
     }
 }

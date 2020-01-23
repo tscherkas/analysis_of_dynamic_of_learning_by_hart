@@ -25,7 +25,7 @@ namespace DLH_DataTransferObjects
         /// <summary>
         /// Answers collections
         /// </summary>
-        public ICollection<DLH_Stimulus> answers { get; set; }
+        public IEnumerable<DLH_Stimulus> answers { get; set; }
 
         /// <summary>
         /// Name

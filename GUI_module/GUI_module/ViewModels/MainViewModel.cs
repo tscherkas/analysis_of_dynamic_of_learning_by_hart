@@ -29,8 +29,11 @@ namespace GUI_module.ViewModels
                 }
             }
         }
-        
+
         public ICommand GoToLogin { get; set; }
+        public ICommand Back { get; set; }
+
+        private INavigationService navigationService;
 
         public DelegateCommand<IViewModel> GoToView { get; set; }
 
@@ -38,12 +41,29 @@ namespace GUI_module.ViewModels
         {
             this.GoToLogin = new DelegateCommand<object>(this.OnGoToLogin);
             this.GoToView = new DelegateCommand<IViewModel>(this.OnGoToView);
-            IocKernel.Get<INavigationService>().setupContainer(this);
+            this.Back = new DelegateCommand<IViewModel>(this.OnGoBack);
+            navigationService = IocKernel.Get<INavigationService>();
+            navigationService.setupContainer(this);
         }
 
         private void OnGoToLogin(object obj)
         {
             ViewModel = IocKernel.Get<LoginViewModel>();
+        }
+        private void OnGoBack(object obj)
+        {
+            if(navigationService.getCurrentUser()?.IsAdmin ?? false)
+            {
+                navigationService.navigateToAdminMenu();
+            }
+            else if(navigationService.getCurrentUser()?.IsAdmin == null)
+            {
+                navigationService.navigateToLogin();
+            }
+            else
+            {
+                navigationService.navigateToTests();
+            }
         }
 
         private void OnGoToView(IViewModel obj)

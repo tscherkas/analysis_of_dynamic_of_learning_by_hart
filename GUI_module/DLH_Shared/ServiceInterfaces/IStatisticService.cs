@@ -14,7 +14,7 @@ namespace DLH_Interfaces
         /// </summary>
         /// <param name="user">User</param>
         /// <returns>Collection of statistic objects</returns>
-        ICollection<DLH_Statistic> loadStatistic(DLH_User user);
+        IEnumerable<DLH_Statistic> loadStatistic(DLH_User user);
 
         /// <summary>
         /// Load statistic filtered
@@ -24,7 +24,7 @@ namespace DLH_Interfaces
         /// <param name="fromFilter">Minimum date filter</param>
         /// <param name="toFilter">Maximum date filter</param>
         /// <returns>Collection of statistic objects</returns>
-        ICollection<DLH_Statistic> loadStatistic(string NameFilter, string GroupFilter, DateTime fromFilter, DateTime toFilter);
+        IEnumerable<DLH_Statistic> loadStatistic(string NameFilter, string GroupFilter, DateTime fromFilter, DateTime toFilter);
 
         /// <summary>
         /// Save statistic

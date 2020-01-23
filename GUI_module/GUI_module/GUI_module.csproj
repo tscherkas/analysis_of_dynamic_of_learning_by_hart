@@ -145,6 +145,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\StimulusHelper.cs" />
+    <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="IocConfiguration.cs" />
     <Compile Include="IocKernel.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -160,6 +162,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\EditTestsViewModel.cs" />
+    <Compile Include="ViewModels\StimulsCollectionsViewModel.cs" />
     <Compile Include="ViewModels\TestsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\AdminStartWindowView.xaml.cs">

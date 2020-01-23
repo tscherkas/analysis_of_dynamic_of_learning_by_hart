@@ -30,9 +30,9 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         /// <param name="lastName">Last name</param>
         /// <param name="group">Group</param>
         /// <returns>Collection of users objects</returns>
-        public ICollection<DLH_User> loadUser(string firstName, string lastName, string group)
+        public IEnumerable<DLH_User> loadUser(string firstName, string lastName, string group)
         {
-            var usersList = Context.tblUser
+            return Context.tblUser
                 .Where(u =>
                     u.FirstName == firstName &&
                     u.LastName == lastName &&
@@ -45,12 +45,6 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
                     Group = u.Group
                 })
                 .ToList();
-            if (usersList.Count > 0)
-                return usersList;
-            else
-            {
-                return new List<DLH_User>() { saveNewUser(firstName, lastName, group) };
-            }
         }
 
         /// <summary>
@@ -59,17 +53,35 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         /// <param name="firstName">First name</param>
         /// <param name="lastName">Last name</param>
         /// <param name="group">Group</param>
-        private DLH_User saveNewUser(string firstName, string lastName, string group)
+        private DLH_User saveNewUser(string firstName, string lastName,
+                                     string group)
         {
-            var newUser = new DLH_User() {  FirstName = firstName, LastName = lastName, Group = group };
-            Context.tblUser.Add(new tblUser() {  FirstName = newUser.FirstName, LastName = newUser.LastName, Group = newUser.Group});
+            Context.tblUser.Add(new tblUser() {
+                FirstName = firstName,
+                LastName = lastName,
+                Group = group
+            });
             Context.SaveChanges();
-            return newUser;
+            return new DLH_User
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Group = group
+            };
         }
 
-        public ICollection<DLH_User> loadUsers(string NameFilter = "", string GroupFilter = "")
+        /// <summary>
+        /// Load a list of users which match provided filters.
+        /// </summary>
+        /// <param name="NameFilter">Name filter.</param>
+        /// <param name="GroupFilter">Group filter.</param>
+        /// <returns></returns>
+        public IEnumerable<DLH_User> loadUsers(string NameFilter = "", string GroupFilter = "")
         {
             return Context.tblUser
+                .Where(u => u.FirstName.IndexOf(NameFilter) != -1 ||
+                            u.LastName.IndexOf(NameFilter) != -1 ||
+                            u.Group.IndexOf(GroupFilter) != -1)
                 .Select(u => new DLH_User()
                 {
                     ID = u.UserId,
@@ -78,6 +90,22 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
                     Group = u.Group
                 })
                 .ToList();
+        }
+
+        public IEnumerable<DLH_User> loadUser(DLH_User user)
+        {
+            return loadUser(user.FirstName, user.LastName, user.Group);
+        }
+
+        public DLH_User getCurrentUser(DLH_User user)
+        {
+            var usersList = this.loadUser(user);
+            if (usersList.Count() > 0)
+                return usersList.First();
+            else
+            {
+                return saveNewUser(user.FirstName, user.LastName, user.Group);
+            }
         }
     }
 }

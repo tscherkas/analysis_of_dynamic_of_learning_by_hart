@@ -39,6 +39,6 @@ namespace DLH_BusinessLibrary
         /// <summary>
         /// Answers collection
         /// </summary>
-        public ICollection<Answer> Answers { get; set; }
+        public IEnumerable<Answer> Answers { get; set; }
     }
 }

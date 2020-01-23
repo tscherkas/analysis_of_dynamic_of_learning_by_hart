@@ -12,14 +12,14 @@ namespace DLH_Interfaces
         /// </summary>
         /// <param name="user">User</param>
         /// <returns>Collection of settings objects</returns>
-        ICollection<DLH_DataTransferObjects.DLH_Settings> loadSettings(DLH_DataTransferObjects.DLH_User user);
+        IEnumerable<DLH_DataTransferObjects.DLH_Settings> loadSettings(DLH_DataTransferObjects.DLH_User user);
 
         /// <summary>
         /// Load settings by filter string
         /// </summary>
         /// <param name="nameDescriptionFilter">Filter string</param>
         /// <returns>Collection of settings objects</returns>
-        ICollection<DLH_DataTransferObjects.DLH_Settings> loadSettingsFiltered(string nameDescriptionFilter = "");
+        IEnumerable<DLH_DataTransferObjects.DLH_Settings> loadSettingsFiltered(string nameDescriptionFilter = "");
 
         /// <summary>
         /// Update settings object
