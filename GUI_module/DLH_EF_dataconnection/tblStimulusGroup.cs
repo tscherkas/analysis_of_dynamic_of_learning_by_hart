@@ -10,7 +10,7 @@ namespace DLH_EF_dataconnection
         {
             Stimulus = new HashSet<tblStimulus>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
         public string Name { get; set; }
         public virtual ICollection<tblStimulus> Stimulus { get; set; }

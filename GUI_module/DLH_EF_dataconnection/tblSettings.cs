@@ -9,7 +9,7 @@ namespace DLH_EF_dataconnection
     public partial class tblSettings
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long SettingsId { get; set; }
 
         public long SurveyId { get; set; }

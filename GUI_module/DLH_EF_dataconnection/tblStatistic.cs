@@ -15,14 +15,12 @@ namespace DLH_EF_dataconnection
         }
         public long UserId { get; set; }
         
-        public long Date { get; set; }
+        public long SurveyId { get; set; }
+
+        public DateTime Date { get; set; }
 
         public long NumberOfCycles { get; set; }
         
-        public TimeSpan Pause { get; set; }
-
-        public TimeSpan Interval { get; set; }
-
         [Required]
         [StringLength(100)]
         public string DynamicData { get; set; }
@@ -30,9 +28,12 @@ namespace DLH_EF_dataconnection
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long StatisticId { get; set; }
+        
+        public virtual tblSurvey tblSurvey { get; set; }
+
+        public virtual tblUser tblUser { get; set; }
 
         public virtual ICollection<tblAnswer> tblAnswers { get; set; }
 
-        public virtual tblUser tblUser { get; set; }
     }
 }

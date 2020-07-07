@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DLH_BusinessLibrary;
+using DLH_EF_dataconnection;
 using GUI_module.ViewModels;
 
 namespace GUI_module.Services
@@ -36,7 +37,7 @@ namespace GUI_module.Services
         }
 
         public void navigateToAdminMenu()
-        {
+        { 
             container.ViewModel = IocKernel.Get<AdminStartWindowViewModel>();
         }
 

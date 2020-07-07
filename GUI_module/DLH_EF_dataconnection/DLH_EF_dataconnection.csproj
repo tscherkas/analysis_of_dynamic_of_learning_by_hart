@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DLH_Context.cs" />
+    <Compile Include="DLH_EF_Initializer.cs" />
     <Compile Include="DLH_EF_Services\DLH_SettingsService.cs" />
     <Compile Include="DLH_EF_Services\DLH_StatisticService.cs" />
     <Compile Include="DLH_EF_Services\DLH_SurveyService.cs" />
@@ -71,6 +72,14 @@
     <Compile Include="Migrations\202001231258549_Add Stimulus groups.cs" />
     <Compile Include="Migrations\202001231258549_Add Stimulus groups.Designer.cs">
       <DependentUpon>202001231258549_Add Stimulus groups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007061551008_Add a key to stimulus group table.cs" />
+    <Compile Include="Migrations\202007061551008_Add a key to stimulus group table.Designer.cs">
+      <DependentUpon>202007061551008_Add a key to stimulus group table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007070948476_add Survey link in Answers.cs" />
+    <Compile Include="Migrations\202007070948476_add Survey link in Answers.Designer.cs">
+      <DependentUpon>202007070948476_add Survey link in Answers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001231258549_Add Stimulus groups.resx">
       <DependentUpon>202001231258549_Add Stimulus groups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007061551008_Add a key to stimulus group table.resx">
+      <DependentUpon>202007061551008_Add a key to stimulus group table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007070948476_add Survey link in Answers.resx">
+      <DependentUpon>202007070948476_add Survey link in Answers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
