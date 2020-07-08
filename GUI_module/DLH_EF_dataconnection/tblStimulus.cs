@@ -17,10 +17,14 @@ namespace DLH_EF_dataconnection
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long StimulusId { get; set; }
-        
+
         [Required]
         [StringLength(1000)]
         public string DocumentPath { get; set; }
+
+        [Required]
+        [StringLength(1000)]
+        public string Value { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAnswer> tblAnswer { get; set; }

@@ -13,8 +13,8 @@ namespace DLH_EF_dataconnection
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long AnswerId { get; set; }
 
-        [StringLength(10)]
-        public string AnswerDateTime { get; set; }
+
+        public DateTime AnswerDateTime { get; set; }
 
         public long? StimulusId { get; set; }
 

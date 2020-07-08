@@ -81,6 +81,10 @@
     <Compile Include="Migrations\202007070948476_add Survey link in Answers.Designer.cs">
       <DependentUpon>202007070948476_add Survey link in Answers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007080808441_Add a column for value of Stimul.cs" />
+    <Compile Include="Migrations\202007080808441_Add a column for value of Stimul.Designer.cs">
+      <DependentUpon>202007080808441_Add a column for value of Stimul.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007070948476_add Survey link in Answers.resx">
       <DependentUpon>202007070948476_add Survey link in Answers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007080808441_Add a column for value of Stimul.resx">
+      <DependentUpon>202007080808441_Add a column for value of Stimul.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

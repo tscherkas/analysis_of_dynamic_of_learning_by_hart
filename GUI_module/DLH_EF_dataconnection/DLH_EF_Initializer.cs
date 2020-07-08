@@ -13,7 +13,6 @@ namespace DLH_EF_dataconnection
         {
             FillUsers(context);
             FillStimulusGroups(context);
-            FillStimulus(context);
             FillSurveys(context);
             FillSurveySettings(context);
             //FillAnswerStatistics(context);
@@ -61,115 +60,101 @@ namespace DLH_EF_dataconnection
             stimulusGroups.Add(new tblStimulusGroup()
             {
                 Name = "Images",
-                Stimulus = new List<tblStimulus>()
+                Stimulus = new HashSet<tblStimulus>()
                 {
                     new tblStimulus()
                     {
-                        DocumentPath = "IMG_Tree"
+                        Value = "IMG_Tree"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "IMG_Flower"
+                        Value = "IMG_Flower"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "IMG_Human"
+                        Value = "IMG_Human"
                     }
                 }
             });
             stimulusGroups.Add(new tblStimulusGroup()
             {
                 Name = "Text",
-                Stimulus = new List<tblStimulus>()
+                Stimulus = new HashSet<tblStimulus>()
                 {
                     new tblStimulus()
                     {
-                        DocumentPath = "Tree"
+                        Value = "Tree"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "Flower"
+                        Value = "Flower"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "Human"
+                        Value = "Human"
                     }
                 }
             });
             stimulusGroups.Add(new tblStimulusGroup()
             {
                 Name = "Letters",
-                Stimulus = new List<tblStimulus>()
+                Stimulus = new HashSet<tblStimulus>()
                 {
                     new tblStimulus()
                     {
-                        DocumentPath = "A"
+                        Value = "A"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "Z"
+                        Value = "Z"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "B"
+                        Value = "B"
                     }
                 }
             });
             stimulusGroups.Add(new tblStimulusGroup()
             {
                 Name = "Images with text",
-                Stimulus = new List<tblStimulus>()
+                Stimulus = new HashSet<tblStimulus>()
                 {
                     new tblStimulus()
                     {
-                        DocumentPath = "IMG_Tree_text"
+                        Value = "IMG_Tree_text"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "IMG_Flower_text"
+                        Value = "IMG_Flower_text"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "IMG_Human_text"
+                        Value = "IMG_Human_text"
                     }
                 }
             });
             stimulusGroups.Add(new tblStimulusGroup()
             {
                 Name = "Text 2",
-                Stimulus = new List<tblStimulus>()
+                Stimulus = new HashSet<tblStimulus>()
                 {
                     new tblStimulus()
                     {
-                        DocumentPath = "Pit"
+                        Value = "Pit"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "Iren"
+                        Value = "Iren"
                     },
                     new tblStimulus()
                     {
-                        DocumentPath = "Iron"
+                        Value = "Iron"
                     }
                 }
             });
 
             context.tblStimulusGroup.AddRange(stimulusGroups);
             context.SaveChanges();
-        }
-
-        private void FillStimulus(DLH_Context context)
-        {
-            //var stimulusGroups = context.tblStimulusGroup.AsEnumerable();
-            //if (stimulusGroups.Any())
-            //{
-            //    var stimulus = new List<tblStimulus>();
-
-            //    stimulus.Add(new tblStimulus()
-            //    {
-            //        DocumentPath = "A"
-            //    });
-            //}
         }
 
         private void FillSurveys(DLH_Context context)
@@ -235,13 +220,37 @@ namespace DLH_EF_dataconnection
                 {
                     foreach (var stimulus in survey.StimulusGroup.Stimulus)
                     {
+                        List<tblAnswer> answersList = new List<tblAnswer>();
+                        answersList.Add(
+                            new tblAnswer()
+                            {
+                                AnswerDateTime = DateTime.Now.AddMinutes(-5),
+                                StimulusId = stimulus.StimulusId,
+                                Value = stimulus.Value + "_"
+                            });
+                        answersList.Add(
+                            new tblAnswer()
+                            {
+                                AnswerDateTime = DateTime.Now.AddMinutes(-4),
+                                StimulusId = stimulus.StimulusId,
+                                Value = stimulus.Value + "__"
+                            });
+                        answersList.Add(
+                            new tblAnswer()
+                            {
+                                AnswerDateTime = DateTime.Now.AddMinutes(-3),
+                                StimulusId = stimulus.StimulusId,
+                                Value = stimulus.Value
+                            });
+
                         statistics.Add(new tblStatistic()
                         {
                             SurveyId = survey.SurveyId,
                             UserId = user.UserId,
-                            tblAnswers = new List<tblAnswer>(),                            
+                            tblAnswers = answersList,                            
                             Date = DateTime.Now,
-                            DynamicData = ";;;;" + stimulus.DocumentPath
+                            DynamicData = ";;;;" + stimulus.Value,
+                            NumberOfCycles = 3                           
                         });
                     }
                 }
