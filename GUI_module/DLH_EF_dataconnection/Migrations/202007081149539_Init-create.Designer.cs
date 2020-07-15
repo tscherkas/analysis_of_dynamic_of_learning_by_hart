@@ -7,13 +7,13 @@ namespace DLH_EF_dataconnection.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class Initcreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initcreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910181105468_Initial-Create"; }
+            get { return "202007081149539_Init-create"; }
         }
         
         string IMigrationMetadata.Source

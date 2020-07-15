@@ -6,13 +6,9 @@ namespace DLH_EF_dataconnection
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("tblAnswer")]
-    public partial class tblAnswer
+    public partial class Answer
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long AnswerId { get; set; }
-
 
         public DateTime AnswerDateTime { get; set; }
 
@@ -24,9 +20,9 @@ namespace DLH_EF_dataconnection
         [StringLength(100)]
         public string Value { get; set; }
 
-        public virtual tblStimulus tblStimulus { get; set; }
+        public Stimulus Stimulus { get; set; }
 
-        public virtual tblStatistic tblStatistic { get; set; }
+        public Statistic Statistic { get; set; }
         
     }
 }

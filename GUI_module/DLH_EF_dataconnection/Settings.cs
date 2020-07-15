@@ -6,10 +6,8 @@ namespace DLH_EF_dataconnection
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class tblSettings
+    public partial class Settings
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long SettingsId { get; set; }
 
         public long SurveyId { get; set; }
@@ -18,6 +16,6 @@ namespace DLH_EF_dataconnection
 
         public TimeSpan Interval { get; set; }
 
-        public virtual tblSurvey tblSurvey { get; set; }
+        public Survey Survey { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         /// <returns>Collection of surveys</returns>
         public IEnumerable<DLH_Survey> loadSurveys()
         {
-            return Context.tblSurvey
+            return Context.Surveys
                 .Select(s => new DLH_Survey()
                 {
                     ID = s.SurveyId,
@@ -45,7 +45,7 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         public IEnumerable<DLH_Stimulus> loadStimulus()
         {
             List<DLH_Stimulus> ret = null;
-            var survey = Context.tblSurvey
+            var survey = Context.Surveys
                 .Select(s => s).First();
             ret = survey.StimulusGroup.Stimulus
                 .Select(s => new DLH_Stimulus()

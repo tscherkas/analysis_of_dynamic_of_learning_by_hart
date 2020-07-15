@@ -7,13 +7,13 @@ namespace DLH_EF_dataconnection.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddacolumnforvalueofStimul : IMigrationMetadata
+    public sealed partial class FixStimulusfields : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddacolumnforvalueofStimul));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FixStimulusfields));
         
         string IMigrationMetadata.Id
         {
-            get { return "202007080808441_Add a column for value of Stimul"; }
+            get { return "202007081200343_Fix Stimulus fields"; }
         }
         
         string IMigrationMetadata.Source

@@ -32,7 +32,7 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         /// <returns>Collection of users objects</returns>
         public IEnumerable<DLH_User> loadUser(string firstName, string lastName, string group)
         {
-            return Context.tblUser
+            return Context.Users
                 .Where(u =>
                     u.FirstName == firstName &&
                     u.LastName == lastName &&
@@ -56,7 +56,7 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         private DLH_User saveNewUser(string firstName, string lastName,
                                      string group)
         {
-            Context.tblUser.Add(new tblUser() {
+            Context.Users.Add(new User() {
                 FirstName = firstName,
                 LastName = lastName,
                 Group = group
@@ -78,7 +78,7 @@ namespace DLH_EF_dataconnection.DLH_EF_Services
         /// <returns></returns>
         public IEnumerable<DLH_User> loadUsers(string NameFilter = "", string GroupFilter = "")
         {
-            return Context.tblUser
+            return Context.Users
                 .Where(u => u.FirstName.IndexOf(NameFilter) != -1 ||
                             u.LastName.IndexOf(NameFilter) != -1 ||
                             u.Group.IndexOf(GroupFilter) != -1)

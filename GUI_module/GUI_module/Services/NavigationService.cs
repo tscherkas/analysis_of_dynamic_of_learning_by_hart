@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DLH_BusinessLibrary;
 using DLH_EF_dataconnection;
 using GUI_module.ViewModels;
+using User = DLH_BusinessLibrary.User;
 
 namespace GUI_module.Services
 {
@@ -45,7 +46,7 @@ namespace GUI_module.Services
         {
             container.ViewModel = IocKernel.Get<StimulsCollectionsViewModel>();
         }
-        public void setCurrentUser(User user)
+        public void setCurrentUser(DLH_BusinessLibrary.User user)
         {
             this.user = user;
         }
@@ -58,7 +59,7 @@ namespace GUI_module.Services
 
         private IViewContainer container;
 
-        private User user;
+        private DLH_BusinessLibrary.User user;
 
     }
 }

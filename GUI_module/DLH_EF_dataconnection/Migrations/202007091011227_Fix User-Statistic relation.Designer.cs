@@ -7,13 +7,13 @@ namespace DLH_EF_dataconnection.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddStimulusgroups : IMigrationMetadata
+    public sealed partial class FixUserStatisticrelation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddStimulusgroups));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FixUserStatisticrelation));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001231258549_Add Stimulus groups"; }
+            get { return "202007091011227_Fix User-Statistic relation"; }
         }
         
         string IMigrationMetadata.Source

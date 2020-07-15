@@ -65,36 +65,31 @@
     <Compile Include="DLH_EF_Services\DLH_StatisticService.cs" />
     <Compile Include="DLH_EF_Services\DLH_SurveyService.cs" />
     <Compile Include="DLH_EF_Services\DLH_UserService.cs" />
-    <Compile Include="Migrations\201910181105468_Initial-Create.cs" />
-    <Compile Include="Migrations\201910181105468_Initial-Create.Designer.cs">
-      <DependentUpon>201910181105468_Initial-Create.cs</DependentUpon>
+    <Compile Include="Migrations\202007081149539_Init-create.cs" />
+    <Compile Include="Migrations\202007081149539_Init-create.Designer.cs">
+      <DependentUpon>202007081149539_Init-create.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001231258549_Add Stimulus groups.cs" />
-    <Compile Include="Migrations\202001231258549_Add Stimulus groups.Designer.cs">
-      <DependentUpon>202001231258549_Add Stimulus groups.cs</DependentUpon>
+    <Compile Include="Migrations\202007081200343_Fix Stimulus fields.cs" />
+    <Compile Include="Migrations\202007081200343_Fix Stimulus fields.Designer.cs">
+      <DependentUpon>202007081200343_Fix Stimulus fields.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007061551008_Add a key to stimulus group table.cs" />
-    <Compile Include="Migrations\202007061551008_Add a key to stimulus group table.Designer.cs">
-      <DependentUpon>202007061551008_Add a key to stimulus group table.cs</DependentUpon>
+    <Compile Include="Migrations\202007081203465_Fix Stimulus fields%282%29.cs" />
+    <Compile Include="Migrations\202007081203465_Fix Stimulus fields%282%29.Designer.cs">
+      <DependentUpon>202007081203465_Fix Stimulus fields%282%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007070948476_add Survey link in Answers.cs" />
-    <Compile Include="Migrations\202007070948476_add Survey link in Answers.Designer.cs">
-      <DependentUpon>202007070948476_add Survey link in Answers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007080808441_Add a column for value of Stimul.cs" />
-    <Compile Include="Migrations\202007080808441_Add a column for value of Stimul.Designer.cs">
-      <DependentUpon>202007080808441_Add a column for value of Stimul.cs</DependentUpon>
+    <Compile Include="Migrations\202007091011227_Fix User-Statistic relation.cs" />
+    <Compile Include="Migrations\202007091011227_Fix User-Statistic relation.Designer.cs">
+      <DependentUpon>202007091011227_Fix User-Statistic relation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs" />
-    <Compile Include="tblAnswer.cs" />
-    <Compile Include="tblSettings.cs" />
-    <Compile Include="tblStatistic.cs" />
-    <Compile Include="tblStimulus.cs" />
-    <Compile Include="tblStimulusGroup.cs" />
-    <Compile Include="tblSurvey.cs" />
-    <Compile Include="tblUser.cs" />
+    <Compile Include="Answer.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Statistic.cs" />
+    <Compile Include="Stimulus.cs" />
+    <Compile Include="StimulusGroup.cs" />
+    <Compile Include="Survey.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -107,20 +102,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910181105468_Initial-Create.resx">
-      <DependentUpon>201910181105468_Initial-Create.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007081149539_Init-create.resx">
+      <DependentUpon>202007081149539_Init-create.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001231258549_Add Stimulus groups.resx">
-      <DependentUpon>202001231258549_Add Stimulus groups.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007081200343_Fix Stimulus fields.resx">
+      <DependentUpon>202007081200343_Fix Stimulus fields.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007061551008_Add a key to stimulus group table.resx">
-      <DependentUpon>202007061551008_Add a key to stimulus group table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007081203465_Fix Stimulus fields%282%29.resx">
+      <DependentUpon>202007081203465_Fix Stimulus fields%282%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007070948476_add Survey link in Answers.resx">
-      <DependentUpon>202007070948476_add Survey link in Answers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007080808441_Add a column for value of Stimul.resx">
-      <DependentUpon>202007080808441_Add a column for value of Stimul.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007091011227_Fix User-Statistic relation.resx">
+      <DependentUpon>202007091011227_Fix User-Statistic relation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

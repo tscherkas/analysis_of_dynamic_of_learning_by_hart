@@ -6,14 +6,12 @@ namespace DLH_EF_dataconnection
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("tblStatistic")]
-    public partial class tblStatistic
+    public partial class Statistic
     {
-        public tblStatistic()
+        public Statistic()
         {
-            tblAnswers = new HashSet<tblAnswer>();
+            Answers = new HashSet<Answer>();
         }
-        public long UserId { get; set; }
         
         public long SurveyId { get; set; }
 
@@ -25,15 +23,13 @@ namespace DLH_EF_dataconnection
         [StringLength(100)]
         public string DynamicData { get; set; }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long StatisticId { get; set; }
         
-        public virtual tblSurvey tblSurvey { get; set; }
+        public Survey Survey { get; set; }
 
-        public virtual tblUser tblUser { get; set; }
+        public User User { get; set; }
 
-        public virtual ICollection<tblAnswer> tblAnswers { get; set; }
+        public ICollection<Answer> Answers { get; }
 
     }
 }

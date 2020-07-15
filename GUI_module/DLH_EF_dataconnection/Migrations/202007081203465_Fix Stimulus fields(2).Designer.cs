@@ -7,13 +7,13 @@ namespace DLH_EF_dataconnection.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addSurveylinkinAnswers : IMigrationMetadata
+    public sealed partial class FixStimulusfields2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addSurveylinkinAnswers));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FixStimulusfields2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202007070948476_add Survey link in Answers"; }
+            get { return "202007081203465_Fix Stimulus fields(2)"; }
         }
         
         string IMigrationMetadata.Source
